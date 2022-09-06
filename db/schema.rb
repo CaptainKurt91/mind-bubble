@@ -22,25 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
     t.index ["home_id"], name: "index_categories_on_home_id"
   end
 
-  create_table "category_tasks", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "task_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_tasks_on_category_id"
-    t.index ["task_id"], name: "index_category_tasks_on_task_id"
-  end
-
-  create_table "components", force: :cascade do |t|
-    t.string "type"
-    t.text "content"
-    t.date "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "task_id", null: false
-    t.index ["task_id"], name: "index_components_on_task_id"
-  end
-
   create_table "homes", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
@@ -52,6 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_tasks_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,8 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
   end
 
   add_foreign_key "categories", "homes"
-  add_foreign_key "category_tasks", "categories"
-  add_foreign_key "category_tasks", "tasks"
-  add_foreign_key "components", "tasks"
   add_foreign_key "homes", "users"
+  add_foreign_key "tasks", "categories"
 end
