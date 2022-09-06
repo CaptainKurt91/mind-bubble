@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_154358) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["home_id"], name: "index_categories_on_home_id"
+  end
+
+  create_table "components", force: :cascade do |t|
+    t.string "type"
+    t.text "content"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "task_id", null: false
+    t.string "name"
+    t.index ["task_id"], name: "index_components_on_task_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -51,6 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_06_130429) do
   end
 
   add_foreign_key "categories", "homes"
+  add_foreign_key "components", "tasks"
   add_foreign_key "homes", "users"
   add_foreign_key "tasks", "categories"
 end

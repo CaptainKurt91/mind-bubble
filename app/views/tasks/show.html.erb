@@ -1,0 +1,7 @@
+<h1><%= @task.name %></h1>
+<ul>
+  <%@task.components.each do |component|%>
+  <li><%= component.name %></li>
+  <%end%>
+</ul>
+<%= link_to "Add a component", new_task_component_path(@task) %>

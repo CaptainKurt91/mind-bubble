@@ -1,15 +1,18 @@
 class TasksController < ApplicationController
   def new
+    @category = Category.find(params[:category_id])
     @task = Task.new
   end
 
   def create
-    @category_task = CategoryTask.new
     @category = Category.find(params[:category_id])
-    @task = Task.create(name: params[:name])
-    @ca
-    @category.task = @task
-    @category.save
-    redirect_to category_path(@categorie)
+    @task = Task.new(name: params[:task][:name])
+    @task.category = @category
+    @task.save
+    redirect_to category_path(@category)
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 end

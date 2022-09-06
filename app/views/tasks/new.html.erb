@@ -1,2 +1,4 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<%= simple_form_for [@category, @task] do |f| %>
+<%= f.input :name %>
+<%= f.submit "Add task" %>
+<% end %>
