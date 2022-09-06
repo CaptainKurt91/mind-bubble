@@ -1,4 +1,5 @@
 class Task < ApplicationRecord
-  has_many :category, through: :category_tasks
+  belongs_to :category_task
+  belongs_to :category, through: :category_task
   validates :name, presence: true
 end
