@@ -8,19 +8,19 @@
 
     <%= link_to second[0], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-blue"  style="<%= "display: none;" if second[0].nil? %>">
-        <%= second[0].name.capitalize %>
+        <%= second[0].name.capitalize  unless second[0].nil?%>
       </div>
     <% end %>
 
     <%= link_to second[1], style:"text-decoration: none;" do %>
       <div class="bbl bbl-pink"  style="<%= "display: none;" if second[1].nil? %>">
-        <%= second[1].name.capitalize %>
+        <%= second[1].name.capitalize  unless second[1].nil?%>
       </div>
     <% end %>
 
     <%= link_to second[2], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-yellow" style="<%= "display: none;" if second[2].nil? %>">
-        <%= second[2].name.capitalize %>
+        <%= second[2].name.capitalize  unless second[2].nil? %>
       </div>
       <% end %>
   </div>
@@ -58,6 +58,6 @@
   </div>
 </div>
 
-<% unless main.nil? || second.count <= 6 %>
+<% unless main.nil? || second.count >= 6 %>
   <%= link_to "Add a task", new_category_task_path(main) %>
 <% end %>
