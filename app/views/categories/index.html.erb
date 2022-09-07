@@ -6,6 +6,10 @@
 
 <div class="bbl-container">
   <div class="top-display">
+  <div class="top-lines">
+    <div class="line-tp-lft"></div>
+    <div class="line-tp-right"></div>
+  </div>
     <%= link_to @categories[0], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-blue"><%= @categories[0].name %></div>
     <% end %>
@@ -15,13 +19,15 @@
 
   <div class="main-bbl-container">
     <div class="main-bbl"></div>
-    <div class="line-bbl-top"></div>
   </div>
 
   <div class="bottom-display">
+    <div class="btm-lines">
+      <div class="line-btm-lft"></div>
+      <div class="line-btm-right"></div>
+  </div>
     <div class="bbl"></div>
     <div class="bbl bottom"></div>
     <div class="bbl"></div>
   </div>
-
 </div>

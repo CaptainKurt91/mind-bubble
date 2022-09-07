@@ -1,5 +1,5 @@
 .bbl-container {
-  height: 80vh;
+  height: 500px;
   width: 80vw;
   margin: 0 auto;
 }
@@ -22,10 +22,11 @@
 
 .main-bbl {
   border: 2px solid black;
-  height: 35vh;
-  width: 35vw;
+  height: 170px;
+  width: 170px;
   border-radius: 50%;
-  position: relative
+  position: relative;
+  background-color: #FFF8E7;
 }
 
 
@@ -38,8 +39,8 @@
 }
 
 .bbl {
-  width: 15vw;
-  height: 15vh;
+  width: 80px;
+  height: 80px;
   border: 2px solid black;
   border-radius: 50%;
   display: flex;
@@ -57,14 +58,58 @@
   align-self: end;
 }
 
-.line-bbl-top {
-  border-bottom: 2px solid #A2D3C2;
-  border-left: 2px solid #A2D3C2;
-  border-bottom-left-radius: 50%;
-  width: 35vw;
-  height: 25vh;
+.top-lines {
+  width: 200px;
+  height: 120px;
+  display: flex;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 20%;
   position: absolute;
-  margin-top: -45vh;
-  margin-left: -20vw;
   z-index: -10;
+}
+
+.line-tp-lft {
+  width: 100px;
+  height: 100%;
+  border-bottom: 5px solid #A2D3C2;
+  border-left: 5px solid #A2D3C2;
+  border-bottom-left-radius: 50%;
+}
+
+.line-tp-right {
+  width: 100px;
+  height: 100%;
+  border-bottom-right-radius: 50%;
+  border-left: 5px solid red;
+  border-bottom: 5px solid yellow;
+  border-right: 5px solid yellow;
+}
+
+.btm-lines {
+  width: 200px;
+  height: 120px;
+  display: flex;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: -19%;
+  position: absolute;
+  z-index: -10;
+}
+
+.line-btm-lft {
+  width: 100px;
+  height: 100%;
+  border-top: 5px solid #A2D3C2;
+  border-left: 5px solid #A2D3C2;
+  border-top-left-radius: 50%;
+}
+
+.line-btm-right {
+  width: 100px;
+  height: 100%;
+  border-top-right-radius: 50%;
+  border-left: 5px solid red;
+  border-top: 5px solid yellow;
+  border-right: 5px solid yellow;
 }
