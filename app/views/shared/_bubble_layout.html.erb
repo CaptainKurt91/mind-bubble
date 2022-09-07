@@ -1,0 +1,61 @@
+<div class="bbl-container">
+  <div class="top-display">
+    <div class="top-lines">
+        <div class="line-tp-lft" style="<%= "display: none;" if second[0].nil? %>"></div>
+        <div class="line-tp-cent" style="<%= "display: none;" if second[1].nil? %>"></div>
+        <div class="line-tp-right" style="<%= "display: none;" if second[2].nil? %>"></div>
+    </div>
+
+    <%= link_to second[0], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-blue"  style="<%= "display: none;" if second[0].nil? %>">
+        <%= second[0].name.capitalize %>
+      </div>
+    <% end %>
+
+    <%= link_to second[1], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-pink"  style="<%= "display: none;" if second[1].nil? %>">
+        <%= second[1].name.capitalize %>
+      </div>
+    <% end %>
+
+    <%= link_to second[2], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-yellow" style="<%= "display: none;" if second[2].nil? %>">
+        <%= second[2].name.capitalize %>
+      </div>
+      <% end %>
+  </div>
+
+  <div class="main-bbl-container">
+    <div class="main-bbl">
+      <h1 class="main-title"><%= main.nil? ? "Home" : main.name.capitalize %></h1>
+    </div>
+  </div>
+
+  <div class="bottom-display">
+    <div class="btm-lines">
+      <div class="line-btm-lft" style="<%= "border: none;" if second[5].nil? %>"></div>
+      <div class="line-btm-cent" style="<%= "background-color: #E8E7E2;" if second[4].nil? %>"></div>
+      <div class="line-btm-right" style="<%= "border: none" if second[3].nil? %>"></div>
+    </div>
+
+    <%= link_to second[5], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-red" style="<%= "display: none;" if second[5].nil? %>">
+        <%= second[5].name.capitalize unless second[5].nil? %>
+      </div>
+    <% end %>
+
+    <%= link_to second[4], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-aqua" style="<%= "display: none;" if second[4].nil? %>">
+        <%= second[4].name.capitalize unless second[4].nil? %>
+      </div>
+    <% end %>
+
+    <%= link_to second[3], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-purple" style="<%= "display: none;" if second[3].nil? %>">
+        <%= second[3].name.capitalize unless second[3].nil? %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%# <%= link_to "Add a task", new_category_task_path(main) %>
