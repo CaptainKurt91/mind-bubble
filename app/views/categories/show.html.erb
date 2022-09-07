@@ -41,21 +41,21 @@
 
   <div class="bottom-display">
     <div class="btm-lines">
-      <% unless @category.tasks[3].nil? %>
+      <% unless @category.tasks[5].nil? %>
         <div class="line-btm-lft"></div>
       <% end %>
 
       <% unless @category.tasks[4].nil? %>
         <div class="line-btm-cent"></div>
       <% end %>
-      
-      <% unless @category.tasks[5].nil? %>
+
+      <% unless @category.tasks[3].nil? %>
         <div class="line-btm-right"></div>
       <% end %>
   </div>
-    <% unless @category.tasks[3].nil? %>
-      <%= link_to @category.tasks[3], style:"text-decoration: none;" do %>
-       <div class="bbl bbl-red"><%= @category.tasks[3].name.capitalize %></div>
+    <% unless @category.tasks[5].nil? %>
+      <%= link_to @category.tasks[5], style:"text-decoration: none;" do %>
+       <div class="bbl bbl-red"><%= @category.tasks[5].name.capitalize %></div>
       <% end %>
     <% end %>
 
@@ -65,9 +65,9 @@
       <% end %>
     <% end %>
 
-    <% unless @category.tasks[5].nil? %>
-      <%= link_to @category.tasks[5], style:"text-decoration: none;" do %>
-        <div class="bbl bbl-purple"><%= @category.tasks[5].name.capitalize %></div>
+    <% unless @category.tasks[3].nil? %>
+      <%= link_to @category.tasks[3], style:"text-decoration: none;" do %>
+        <div class="bbl bbl-purple"><%= @category.tasks[3].name.capitalize %></div>
       <% end %>
     <% end %>
   </div>
