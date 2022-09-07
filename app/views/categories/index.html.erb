@@ -4,3 +4,24 @@
   <% end %>
 </ul>
 
+<div class="bubble-container">
+  <div class="top-display">
+    <%= link_to @categories[0], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bubble"><%= @categories[0].name %></div>
+    <% end %>
+    <div class="bubble"></div>
+    <div class="bubble bottom"></div>
+  </div>
+
+  <div class="main-bubble-container">
+    <div class="main-bubble absolute"></div>
+    <div class="line-bubble-top"></div>
+  </div>
+
+  <div class="bottom-display">
+    <div class="bubble"></div>
+    <div class="bubble bottom"></div>
+    <div class="bubble"></div>
+  </div>
+
+</div>
