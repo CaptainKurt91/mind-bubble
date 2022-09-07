@@ -12,6 +12,14 @@
   justify-items: center;
 }
 
+.bottom-display {
+  width: 100%;
+  height: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
 .main-bbl-container {
   width: 100%;
   height: 50%;
@@ -33,13 +41,6 @@
 }
 
 
-.bottom-display {
-  width: 100%;
-  height: 25%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-}
 
 .bbl {
   width: 80px;

@@ -1,74 +1,59 @@
 <div class="bbl-container">
   <div class="top-display">
     <div class="top-lines">
-      <% unless @category.tasks[0].nil? %>
-        <div class="line-tp-lft"></div>
-      <% end %>
-
-      <% unless @category.tasks[1].nil? %>
-        <div class="line-tp-cent"></div>
-      <% end %>
-
-      <% unless @category.tasks[2].nil? %>
-        <div class="line-tp-right"></div>
-      <% end %>
+        <div class="line-tp-lft" style="<%= "display: none;" if @category.tasks[0].nil? %>"></div>
+        <div class="line-tp-cent" style="<%= "display: none;" if @category.tasks[1].nil? %>"></div>
+        <div class="line-tp-right" style="<%= "display: none;" if @category.tasks[2].nil? %>"></div>
     </div>
 
-    <% unless @category.tasks[0].nil? %>
-      <%= link_to @category.tasks[0], class:"bottom", style:"text-decoration: none;" do %>
-        <div class="bbl bbl-blue"><%= @category.tasks[0].name.capitalize %></div>
-      <% end %>
+    <%= link_to @category.tasks[0], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-blue"  style="<%= "display: none;" if @category.tasks[0].nil? %>">
+        <%= @category.tasks[0].name.capitalize %>
+      </div>
     <% end %>
 
-    <% unless @category.tasks[1].nil? %>
-      <%= link_to @category.tasks[1], style:"text-decoration: none;" do %>
-        <div class="bbl bbl-pink"><%= @category.tasks[1].name.capitalize %></div>
-      <% end %>
+    <%= link_to @category.tasks[1], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-pink"  style="<%= "display: none;" if @category.tasks[1].nil? %>">
+        <%= @category.tasks[1].name.capitalize %>
+      </div>
     <% end %>
 
-    <% unless @category.tasks[2].nil? %>
-      <%= link_to @category.tasks[2], class:"bottom", style:"text-decoration: none;" do %>
-        <div class="bbl bbl-yellow"><%= @category.tasks[2].name.capitalize %></div>
+    <%= link_to @category.tasks[2], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-yellow" style="<%= "display: none;" if @category.tasks[2].nil? %>">
+        <%= @category.tasks[2].name.capitalize %>
+      </div>
       <% end %>
-    <% end %>
   </div>
 
   <div class="main-bbl-container">
     <div class="main-bbl">
-      <h1 class="main-title">Home</h1>
+      <h1 class="main-title"><%= @category.name ? @category.name.capitalize : "Home" %></h1>
     </div>
   </div>
 
   <div class="bottom-display">
     <div class="btm-lines">
-      <% unless @category.tasks[5].nil? %>
-        <div class="line-btm-lft"></div>
-      <% end %>
+      <div class="line-btm-lft" style="<%= "border: none;" if @category.tasks[5].nil? %>"></div>
+      <div class="line-btm-cent" style="<%= "background-color: #E8E7E2;" if @category.tasks[4].nil? %>"></div>
+      <div class="line-btm-right" style="<%= "border: none" if @category.tasks[3].nil? %>"></div>
+    </div>
 
-      <% unless @category.tasks[4].nil? %>
-        <div class="line-btm-cent"></div>
-      <% end %>
-
-      <% unless @category.tasks[3].nil? %>
-        <div class="line-btm-right"></div>
-      <% end %>
-  </div>
-    <% unless @category.tasks[5].nil? %>
-      <%= link_to @category.tasks[5], style:"text-decoration: none;" do %>
-       <div class="bbl bbl-red"><%= @category.tasks[5].name.capitalize %></div>
-      <% end %>
+    <%= link_to @category.tasks[5], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-red" style="<%= "display: none;" if @category.tasks[5].nil? %>">
+        <%= @category.tasks[5].name.capitalize unless @category.tasks[5].nil? %>
+      </div>
     <% end %>
 
-    <% unless @category.tasks[4].nil? %>
-      <%= link_to @category.tasks[4], class:"bottom", style:"text-decoration: none;" do %>
-       <div class="bbl bbl-aqua"><%= @category.tasks[4].name.capitalize %></div>
-      <% end %>
+    <%= link_to @category.tasks[4], class:"bottom", style:"text-decoration: none;" do %>
+      <div class="bbl bbl-aqua" style="<%= "display: none;" if @category.tasks[4].nil? %>">
+        <%= @category.tasks[4].name.capitalize unless @category.tasks[4].nil? %>
+      </div>
     <% end %>
 
-    <% unless @category.tasks[3].nil? %>
-      <%= link_to @category.tasks[3], style:"text-decoration: none;" do %>
-        <div class="bbl bbl-purple"><%= @category.tasks[3].name.capitalize %></div>
-      <% end %>
+    <%= link_to @category.tasks[3], style:"text-decoration: none;" do %>
+      <div class="bbl bbl-purple" style="<%= "display: none;" if @category.tasks[3].nil? %>">
+        <%= @category.tasks[3].name.capitalize unless @category.tasks[3].nil? %>
+      </div>
     <% end %>
   </div>
 </div>
