@@ -10,17 +10,13 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-<<<<<<< HEAD
+
   <body>
     <div>
+      <%= render "shared/searchbar" %>
       <%= yield %>
       <%# <%= render "shared/flashes" %>
       <%= render "shared/navbar" %>
   	</div>
-=======
-  <body><%= render "shared/searchbar" %>
-<%= render "shared/flashes" %>
->>>>>>> 84a5683ad33e44460d064d1ac412e64768e0d72d
-
   </body>
 </html>
