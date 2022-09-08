@@ -12,9 +12,10 @@
       <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
     </div>
   <% else %>
-    <a href="#avatar"><i class="fa-regular fa-user-2" id="dropup"></i></a>
+    <a href="#avatar"><i class="fa-regular fa-user sign-out" id="dropup"></i></a>
     <div class="dropup-content">
       <%= link_to "Sign in / Sign up", user_session_path %>
     </div>
   <% end %>
   </div>
+</div>
