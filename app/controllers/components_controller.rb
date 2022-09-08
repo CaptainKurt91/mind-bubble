@@ -11,4 +11,9 @@ class ComponentsController < ApplicationController
     @component.save
     redirect_to task_path(@task)
   end
+
+  def show
+    @component = Component.find(params[:id])
+    
+  end
 end
