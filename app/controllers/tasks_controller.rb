@@ -14,5 +14,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @components = @task.components
   end
 end
