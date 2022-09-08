@@ -21,10 +21,6 @@
   text-decoration: none;
   font-size: 17px;
 
-  .fa-arrow-left {
-    color: rgba(162, 211, 194, 1);
-  }
-
   .fa-house {
     color:rgba(121, 125, 98, 1);
   }
@@ -40,11 +36,21 @@
     color: green;
   }
 
-  .fa-user-2 {
-    color: red;
+  .disabled {
+    color: rgb(98, 98, 98);
+  }
+  .new {
+    color: rgb(3, 66, 138);
   }
 }
 
+button {
+  all: unset;
+  cursor: pointer;
+  .fa-arrow-left {
+    color: rgba(162, 211, 194, 1);
+  }
+}
 /* Change the color of links on hover */
 .navbar a:hover {
   background-color: #ddd;

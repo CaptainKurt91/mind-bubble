@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-console.log("This works!");
+
 const dropupMenu = document.getElementById("dropup");
 const dropup = document.querySelector(".dropup-content");
 dropupMenu.addEventListener("click", function(e) {
