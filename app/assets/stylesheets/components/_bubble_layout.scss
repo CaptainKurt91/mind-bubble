@@ -66,36 +66,53 @@
     border: 5px solid #A2D3C2;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-left: -20px;
   }
 
   &-pink {
     border: 5px solid #D9AE94;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
   }
 
   &-yellow {
     border: 5px solid #FFCB69;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-right: -20px;
+
   }
 
   &-red {
     border: 5px solid #E29578;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-left: -20px;
   }
 
   &-aqua {
     border: 5px solid #AED9E0;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
   }
 
   &-purple {
     border: 5px solid #DEC0F1;
     padding: 5px;
     text-align: center;
+    width: 100px;
+    height: 100px;
+    margin-right: -20px;
   }
 
 }
