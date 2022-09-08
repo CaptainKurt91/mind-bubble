@@ -1,7 +1,1 @@
-<h1><%= @category.name %></h1>
-<ul>
-  <%@category.tasks.each do |task|%>
-  <li><%= link_to task.name, task_path(task) %></li>
-  <%end%>
-</ul>
-<%= link_to "Add a task", new_category_task_path(@category) %>
+<%= render "/shared/bubble_layout", main: @category, second: @tasks %>
