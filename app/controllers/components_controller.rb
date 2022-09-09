@@ -14,6 +14,5 @@ class ComponentsController < ApplicationController
 
   def show
     @component = Component.find(params[:id])
-    
   end
 end
