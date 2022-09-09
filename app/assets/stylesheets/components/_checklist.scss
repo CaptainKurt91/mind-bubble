@@ -4,13 +4,46 @@ h1 {
   color: #94735b;
 }
 
-li{
+.check {
   list-style-type: none;
   border: 2px solid #997b66;
   width: 330px;
-  padding-left: 10px;
+  height: 50px;
+  padding: 10px;
   margin-left: -5px;
-  border-radius: 50px;
+  border-radius: 3px;
   margin-bottom: 20px;
   background-color: #FFF8E7;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.link a{
+  text-decoration: none;
+  border: 2px solid #997b66;
+  border-radius: 50px;
+  background-color: #FFF8E7;
+  margin-left: 150px;
+  margin-top: 30px;
+  width: 100px;
+  height: 40px;
+  color: black;
+  padding: 5px;
+}
+.link {
+  padding: 5px;
+}
+
+.edit-delete {
+  display: flex;
+
+}
+
+.edit-delete a {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+  margin-left: 20px;
 }
