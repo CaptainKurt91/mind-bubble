@@ -1,4 +1,5 @@
-<h1 class="mb-3"><%= @component.name %></h1>
+<h1><%= @component.name %></h1>
+<ul>
   <% @component.lists.each do |list| %>
   <li class="check">
     <div>
@@ -11,9 +12,7 @@
           delete
          <% end %>
     </div>
-
   </li>
   <% end %>
 </ul>
-
 <div class="link"><%= link_to "Add list", new_component_list_path(@component) %></div>
