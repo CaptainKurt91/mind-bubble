@@ -2,6 +2,8 @@
   <% @component.lists.each do |list| %>
     <li><%= list.state %>, <%= list.content %></li>
   <% end %>
+
 </ul>
+
 
 <%= link_to "Add list", new_component_list_path(@component) %>
