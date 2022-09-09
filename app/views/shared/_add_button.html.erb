@@ -1,0 +1,25 @@
+<%# Checks to see which page we are in and renders the correct function to the add button. %>
+
+<% if params[:controller] == "categories" %>
+
+  <% unless @category.nil? || @tasks.nil? || @tasks.count >= 6 %>
+    <%= link_to new_category_task_path(@category) do %>
+      <i class="fa-solid fa-plus new"></i>
+    <% end %>
+  <% else %>
+    <a><i class="fa-solid fa-plus disabled"></i></a>
+  <% end %>
+
+<% elsif params[:controller] == "tasks" %>
+
+  <% unless @task.nil? || @components.nil? || @components.count >= 6 %>
+    <%= link_to new_task_component_path(@task) do %>
+      <i class="fa-solid fa-plus new"></i>
+    <% end %>
+  <% else %>
+    <a><i class="fa-solid fa-plus disabled"></i></a>
+  <% end %>
+
+<% else %>
+  <a><i class="fa-solid fa-plus disabled"></i></a>
+<% end %>
