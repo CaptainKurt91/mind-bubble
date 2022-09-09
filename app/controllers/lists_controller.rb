@@ -25,7 +25,7 @@ class ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find(params[:id])@
+    @list = List.find(params[:id])
     @list.destroy
     @component = Component.find(@list[:component_id])
     redirect_to component_path(@component)
