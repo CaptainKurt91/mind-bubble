@@ -1,7 +1,7 @@
 <h1><%= @component.name %></h1>
 <ul>
   <% @component.lists.each do |list| %>
-    <li><%= list.state %>, <%= list.content %></li>
+    <li><%= list.state %>, <%= list.content %>  <%= link_to "edit", edit_list_path(list) %></li>
   <% end %>
 </ul>
 
