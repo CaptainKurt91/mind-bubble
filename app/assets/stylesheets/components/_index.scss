@@ -10,3 +10,22 @@
 body {
   background-color: #E8E7E2;
 }
+
+.list-item {
+  width: 70vw;
+  height: 20px;
+  padding: 5px;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.check {
+  height: 10px;
+  width: 10px;
+  border: 1px solid black;
+}
+
+.checked {
+  background-color: black;
+}

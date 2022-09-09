@@ -1,7 +1,6 @@
 <h1><%= @component.name %></h1>
-<ul>
   <% @component.lists.each do |list| %>
-
+<ul>
     <div class="check">
       <li class="list"> <%= check_box_tag (:list)%>
       <%= label_tag %><%= list.content %> <%= link_to "edit", edit_list_path(list) %>
@@ -9,12 +8,9 @@
         delete
       <% end %>
       </li>
-
     </div>
-
   <% end %>
-
-
 </ul>
+
 
 <div class="button"><%= link_to "Add list", new_component_list_path(@component) %></div>
