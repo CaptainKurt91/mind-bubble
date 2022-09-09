@@ -1,10 +1,15 @@
 <h1><%= @component.name %></h1>
 <ul>
   <% @component.lists.each do |list| %>
-    <li><%= list.state %>, <%= list.content %></li>
+    <div class="check">
+      <li class="list"> <%= check_box_tag (:list)%>
+      <%= label_tag %><%= list.content %> </li>
+    </div>
+
   <% end %>
+
 
 </ul>
 
 
-<%= link_to "Add list", new_component_list_path(@component) %>
+<a href=""><%= link_to "Add list", new_component_list_path(@component) %></a>
