@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search/index'
   get 'list/new'
   get 'list/create'
   devise_for :users
