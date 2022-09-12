@@ -2,22 +2,32 @@
 
 <% if params[:controller] == "categories" %>
 
-  <% unless @category.nil? || @category_note.nil? || @sorted.count >= 6 %>
-    <%= link_to new_category_category_checklist_path(@category) do %>
-      <i class="fa-solid fa-plus new"></i>
-    <% end %>
+  <% unless @category.nil? || @sorted.nil? || @sorted.count >= 6 %>
+    <div class="dropup">
+      <a href="#avatar"><i class="fa-solid fa-plus new" id="dropup"></i></a>
+      <div class="dropup-content">
+        <%= link_to "Add new checklist",  new_category_category_checklist_path(@category) %>
+        <%= link_to "Add new note",  new_category_category_note_path(@category) %>
+        <%= link_to "Add new Task",  new_category_task_path(@category)  %>
+      </div>
+    </div>
   <% else %>
-    <a><i class="fa-solid fa-plus disabled"></i></a>
+    <i class="fa-solid fa-plus disabled"></i>
   <% end %>
+
 
 <% elsif params[:controller] == "tasks" %>
 
-  <% unless @task.nil? || @components.nil? || @components.count >= 6 %>
-    <%= link_to new_task_component_path(@task) do %>
-      <i class="fa-solid fa-plus new"></i>
-    <% end %>
+  <% unless @task.nil? || @sorted.nil? || @sorted.count >= 6 %>
+    <div class="dropup">
+      <a href="#avatar"><i class="fa-solid fa-plus new" id="dropup"></i></a>
+      <div class="dropup-content">
+        <%= link_to "Add new checklist",  new_task_task_checklist_path(@task) %>
+        <%= link_to "Add new note",  new_task_task_note_path(@task) %>
+      </div>
+    </div>
   <% else %>
-    <a><i class="fa-solid fa-plus disabled"></i></a>
+    <i class="fa-solid fa-plus disabled"></i>
   <% end %>
 
 <% else %>
