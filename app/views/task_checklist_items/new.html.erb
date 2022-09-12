@@ -1,2 +1,4 @@
-<h1>TaskChecklistItems#new</h1>
-<p>Find me in app/views/task_checklist_items/new.html.erb</p>
+<%= simple_form_for [@task_checklist, @task_checklist_item] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit "Add list" %>
+<% end %>

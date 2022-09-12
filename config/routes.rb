@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :category_checklists, only: [:show]
 
   resources :category_checklists, only: [:show] do
-    resources :category_checklists_items, only: [:new, :create]
+    resources :category_checklist_items, only: [:new, :create]
   end
 
   resources :tasks, only: [:show] do
@@ -28,12 +28,12 @@ Rails.application.routes.draw do
   resources :task_checklists, only: [:show]
 
   resources :task_checklists, only: [:show] do
-    resources :task_checklists_items, only: [:new, :create]
+    resources :task_checklist_items, only: [:new, :create]
   end
 
 
-  resources :category_checklists_items, only: [:show, :destroy, :edit, :update]
-  resources :task_checklists_items, only: [:show, :destroy, :edit, :update]
+  resources :category_checklist_items, only: [:show, :destroy, :edit, :update]
+  resources :task_checklist_items, only: [:show, :destroy, :edit, :update]
   # Defines the root path route ("/")
   # root "articles#index"
 end
