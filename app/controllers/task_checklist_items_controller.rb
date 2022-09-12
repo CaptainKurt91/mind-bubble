@@ -25,8 +25,8 @@ class TaskChecklistItemsController < ApplicationController
     @task_checklist_item = TaskChecklistItem.find(params[:id])
     @task_checklist_item.destroy
 
+    @task_checklist = TaskChecklist.find(@task_checklist_item[:task_checklist_id])
     redirect_to task_checklist_path(@task_checklist)
-    raise
   end
 
   private
