@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import { ids } from "webpack";
 
 document.addEventListener("turbo:load", () => {
   const dropupMenu = document.getElementById("dropup");
@@ -15,3 +16,29 @@ document.addEventListener("turbo:load", () => {
       }
     });
 })
+
+
+document.addEventListener("turbo:load", () => {
+const listItems = document.querySelectorAll(".boolean");
+const checkedItems = []
+
+
+  listItems.forEach((item) => {
+    item.addEventListener("change", (e) => {
+      e.preventDefault();
+      if (item.checked) {
+        checkedItems.push(item);
+      } else {
+        checkedItems.pop();
+      }
+
+      const test = listItems.length;
+      const test2 = checkedItems.length;
+
+      const progression = document.getElementById("progression")
+      progression.style.width = `${test2 / test * 100}%`
+    })
+  });
+
+});
+// console.log(listItems.checked)
