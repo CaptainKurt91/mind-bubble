@@ -2,8 +2,8 @@
 
 <% if params[:controller] == "categories" %>
 
-  <% unless @category.nil? || @tasks.nil? || @tasks.count >= 6 %>
-    <%= link_to new_category_task_path(@category) do %>
+  <% unless @category.nil? || @category_note.nil? || @sorted.count >= 6 %>
+    <%= link_to new_category_category_checklist_path(@category) do %>
       <i class="fa-solid fa-plus new"></i>
     <% end %>
   <% else %>

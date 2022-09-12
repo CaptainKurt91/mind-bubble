@@ -1,2 +1,5 @@
-<h1>CategoryNotes#new</h1>
-<p>Find me in app/views/category_notes/new.html.erb</p>
+<%= simple_form_for [@category, @category_note] do |f| %>
+<%= f.input :name %>
+<%= f.input :content, as: :text %>
+<%= f.submit "Add note" %>
+<% end %>
