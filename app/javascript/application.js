@@ -2,7 +2,6 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import { ids } from "webpack";
 
 document.addEventListener("turbo:load", () => {
   const dropupMenu = document.getElementById("dropup");
