@@ -4,27 +4,31 @@ h1 {
   color: #94735b;
 }
 
+.bbl-list {
+  width: 100%;
+  list-style: none;
+}
+
 .check {
   list-style-type: none;
   border: 2px solid #997b66;
-  width: 330px;
+  width: 100%;
   height: 50px;
   padding: 10px;
   margin-left: -5px;
   border-radius: 3px;
   margin-bottom: 20px;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
   align-items: center;
   display: flex;
   justify-content: space-between;
-
 }
 
-.link a{
+.link a {
   text-decoration: none;
   border: 2px solid #997b66;
   border-radius: 50px;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
   margin-left: 150px;
   margin-top: 30px;
   width: 100px;
@@ -38,7 +42,6 @@ h1 {
 
 .edit-delete {
   display: flex;
-
 }
 
 .edit-delete a {
