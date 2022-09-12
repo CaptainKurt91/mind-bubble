@@ -1,8 +1,13 @@
 <h1><%= @component.name %></h1>
+
+
  <div class="progress-bar mb-3">
   <div id="progression">
   </div>
 </div>
+
+<ul>
+
   <% @component.lists.each do |list| %>
   <li class="check">
     <div>
@@ -15,9 +20,7 @@
         delete
       <% end %>
     </div>
-
   </li>
   <% end %>
 </ul>
-
 <div class="link"><%= link_to "Add list", new_component_list_path(@component) %></div>
