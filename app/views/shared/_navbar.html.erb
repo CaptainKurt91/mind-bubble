@@ -1,8 +1,15 @@
 <div class="navbar">
-  <button onclick="history.back()"><i class="fa-solid fa-arrow-left"></i></button>
+  <button onclick="history.back()">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
   <a href="/categories"><i class="fa-solid fa-house"></i></a>
   <%= render "/shared/add_button" %>
-  <a href="#calendar"><i class="fa-solid fa-calendar-days"></i></a>
+
+<!-- Button trigger modal -->
+<button type="button" data-bs-toggle="modal" data-bs-target="#calendar">
+  <i class="fa-solid fa-calendar-days"></i>
+</button>
+
 
   <div class="dropup">
     <% if current_user %>
@@ -17,5 +24,19 @@
         <%= link_to "Sign in / Sign up", user_session_path %>
       </div>
     <% end %>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="calendar" tabindex="-1" aria-labelledby="calendarLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render "shared/calendar" %>
+      </div>
+    </div>
   </div>
 </div>

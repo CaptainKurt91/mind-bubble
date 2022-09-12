@@ -1,0 +1,12 @@
+<%= turbo_frame_tag 'calendar', data: {turbo_action:"advance"} do %>
+  <%= link_to "random link", root_path %>
+  <%= month_calendar do |date| %>
+    <%= date.day %>
+    <% if false %>
+      <% events = Event.where(date: date) %>
+      <% events.each do |event| %>
+        <%= render 'events/event', event: event %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
