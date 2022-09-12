@@ -1,6 +1,6 @@
 .bbl-container {
   height: 500px;
-  width: 80vw;
+  width: 350px;
   margin: 0 auto;
 }
 
@@ -124,9 +124,7 @@
   width: 210px;
   height: 120px;
   display: flex;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 20%;
+  margin-top: 80px;
   position: absolute;
   z-index: -10;
 }
@@ -156,12 +154,10 @@
 }
 
 .btm-lines {
-  width: 200px;
+  width: 210px;
   height: 120px;
   display: flex;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: -19%;
+  margin-top: -90px;
   position: absolute;
   z-index: -10;
 }

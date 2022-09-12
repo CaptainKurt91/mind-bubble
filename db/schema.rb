@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
 
   create_table "lists", force: :cascade do |t|
     t.string "content"
-    t.boolean "state", default: false, null: false
+    t.boolean "state", default: false
     t.bigint "component_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
