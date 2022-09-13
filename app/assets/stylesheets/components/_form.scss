@@ -19,6 +19,7 @@
   width: 100px;
   height: 40px;
   background-color: #FFF8E7;
+  width: fit-content;
 }
 
 .add-task-container {
@@ -37,4 +38,23 @@
   border-radius: 50px;
   width: fit-content;
   background-color: #FFF8E7;
+}
+
+.add-button {
+  text-align: center;
+}
+
+.mx-1 {
+  background-color:#FFF8E7;
+  margin: 0 auto !important;
+  border: 2px solid #997b66;
+  border-radius: 5px
+}
+
+.form-label.date.optional {
+  margin-left: -280px;
+}
+
+.form-label.text.optional {
+  margin-left: -280px;
 }
