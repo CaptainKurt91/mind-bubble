@@ -13,6 +13,16 @@ class TaskChecklistItemsController < ApplicationController
     redirect_to task_checklist_path(@task_checklist)
   end
 
+  def update
+    @task_checklist_item = TaskChecklistItem.find(params[:id])
+    @task_checklist_item.update(task_checklist_item_params)
+    @task_checklist_item.save
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def destroy
     @task_checklist_item = TaskChecklistItem.find(params[:id])
     @task_checklist_item.destroy
@@ -24,6 +34,6 @@ class TaskChecklistItemsController < ApplicationController
   private
 
   def task_checklist_item_params
-    params.require(:task_checklist_item).permit(:description)
+    params.require(:task_checklist_item).permit(:description, :state)
   end
 end
