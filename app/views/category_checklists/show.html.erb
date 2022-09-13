@@ -1,31 +1,33 @@
 <%= @category_checklist.name %>
 
- <div class="progress-bar mb-3">
-  <div id="progression"></div>
+<div data-controller="progress">
+  <div class="progress-bar mb-3">
+    <div id="progression"></div>
+  </div>
+
+  <ul>
+    <% @category_checklist.category_checklist_items.each do |item| %>
+      <li class="check">
+
+        <div data-controller="item"
+            data-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
+          <input class="check-item" type="checkbox"
+                      data-id= <%=item.id%>
+                      data-action="item#toggle"
+                      data-item-target="state"
+                      <% if item.state %> checked <% end %>>
+          <%= item.description %>
+        </div>
+
+        <div class="edit-delete">
+          <%= link_to "edit", edit_category_checklist_item_path(item) %>
+          <%= button_to category_checklist_item_path(item), method: :delete do %>
+            delete
+          <% end %>
+        </div>
+
+      </li>
+    <% end %>
+  </ul>
 </div>
-
-<ul>
-  <% @category_checklist.category_checklist_items.each do |item| %>
-    <li class="check">
-
-      <div data-controller="item"
-           data-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
-        <input class="check-item" type="checkbox"
-                    data-id= <%=item.id%>
-                    data-action="item#toggle"
-                    data-item-target="state"
-                    <% if item.state %> checked <% end %>>
-        <%= item.description %>
-      </div>
-
-      <div class="edit-delete">
-        <%= link_to "edit", edit_category_checklist_item_path(item) %>
-        <%= button_to category_checklist_item_path(item), method: :delete do %>
-          delete
-        <% end %>
-      </div>
-
-    </li>
-  <% end %>
-</ul>
 <div class="link"><%= link_to "Add list", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
