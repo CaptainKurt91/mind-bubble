@@ -34,6 +34,9 @@ document.addEventListener("turbo:load", () => {
   const checkedItems = [];
 
   listItems.forEach((item) => {
+    if (item.checked) {
+      checkedItems.push(item);
+    }
     item.addEventListener("change", (e) => {
       e.preventDefault();
       if (item.checked) {
@@ -41,12 +44,14 @@ document.addEventListener("turbo:load", () => {
       } else {
         checkedItems.pop();
       }
-
-      const test = listItems.length;
-      const test2 = checkedItems.length;
-
-      const progression = document.getElementById("progression");
-      progression.style.width = `${(test2 / test) * 100}%`;
+      updateProgressBar();
     });
   });
+  function updateProgressBar() {
+    const test = listItems.length;
+    const test2 = checkedItems.length;
+    const progression = document.getElementById("progression");
+    progression.style.width = `${(test2 / test) * 100}%`;
+  }
+  updateProgressBar();
 });
