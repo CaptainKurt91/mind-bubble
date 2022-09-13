@@ -1,4 +1,6 @@
 class TaskFilesController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
+  
   def new
   end
 
