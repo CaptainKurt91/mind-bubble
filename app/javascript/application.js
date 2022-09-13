@@ -29,8 +29,9 @@ document.addEventListener("turbo:load", () => {
   });
 })
 
-/* document.addEventListener("turbo:load", () => {
-const listItems = document.querySelectorAll(".boolean");
+
+document.addEventListener("turbo:load", () => {
+const listItems = document.querySelectorAll(".check-item");
 const checkedItems = []
 
 
@@ -51,5 +52,4 @@ const checkedItems = []
     })
   });
 
-}); */
-// console.log(listItems.checked)
+});
