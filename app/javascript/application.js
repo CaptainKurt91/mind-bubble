@@ -29,6 +29,11 @@ document.addEventListener("turbo:load", () => {
   });
 });
 
+
+document.addEventListener("turbo:load", () => {
+const listItems = document.querySelectorAll(".check-item");
+const checkedItems = []
+
 document.addEventListener("turbo:load", () => {
   const listItems = document.querySelectorAll(".check-item");
   const checkedItems = [];
@@ -49,4 +54,3 @@ document.addEventListener("turbo:load", () => {
       progression.style.width = `${(test2 / test) * 100}%`;
     });
   });
-});

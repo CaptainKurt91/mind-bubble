@@ -32,7 +32,6 @@ Rails.application.routes.draw do
     resources :task_checklist_items, only: [:new, :create]
   end
 
-
   resources :category_checklist_items, only: [:show, :destroy, :edit, :update]
   resources :task_checklist_items, only: [:show, :destroy, :edit, :update]
   # Defines the root path route ("/")

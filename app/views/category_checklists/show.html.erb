@@ -8,8 +8,13 @@
   <% @category_checklist.category_checklist_items.each do |item| %>
     <li class="check">
 
-      <div>
-        <input type="checkbox" class="check-item">
+      <div data-controller="item"
+           data-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
+        <input class="check-item" type="checkbox"
+                    data-id= <%=item.id%>
+                    data-action="item#toggle"
+                    data-item-target="state"
+                    <% if item.state %> checked <% end %>>
         <%= item.description %>
       </div>
 
