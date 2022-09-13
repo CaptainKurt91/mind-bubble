@@ -1,12 +1,12 @@
 import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="item"
 export default class extends Controller {
+  static targets = ["state", "progression"];
+
   connect() {
-    
+    this.updateProgressBar()
   }
 
-  static targets = ["state"];
   toggle(event) {
     let formData = new FormData();
     formData.append("category_checklist_item[state]", this.stateTarget.checked);
@@ -25,5 +25,17 @@ export default class extends Controller {
         event.target.checked = !event.target.checked;
       }
     });
+    console.log(this.stateTarget);
+    this.updateProgressBar()
+  }
+
+  updateProgressBar() {
+    const checkedItems = [];
+
+    this.stateTargets.forEach((target) => {
+     if(target.checked) checkedItems.push(target)
+    });
+
+    this.progressionTarget.style.width = `${(checkedItems.length / this.stateTargets.length) * 100}%`;
   }
 }

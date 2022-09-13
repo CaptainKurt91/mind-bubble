@@ -1,20 +1,21 @@
 <%= @category_checklist.name %>
 
-<div data-controller="progress">
+<div data-controller="cat-item">
   <div class="progress-bar mb-3">
-    <div id="progression"></div>
+    <div data-cat-item-target="progression" id="progression"></div>
   </div>
 
   <ul>
     <% @category_checklist.category_checklist_items.each do |item| %>
       <li class="check">
 
-        <div data-controller="item"
-            data-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
-          <input class="check-item" type="checkbox"
+        <div
+            data-cat-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
+          <input      type="checkbox"
                       data-id= <%=item.id%>
-                      data-action="item#toggle"
-                      data-item-target="state"
+                      data-action="cat-item#toggle"
+                      data-cat-item-target="state"
+                      <%# data-progress-target="item" %>
                       <% if item.state %> checked <% end %>>
           <%= item.description %>
         </div>
