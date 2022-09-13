@@ -1,5 +1,4 @@
 <%= turbo_frame_tag 'calendar', data: {turbo_action:"advance"} do %>
-  <%= link_to "random link", root_path %>
   <%= month_calendar do |date| %>
     <%= date.day %>
     <% if false %>
@@ -10,3 +9,5 @@
     <% end %>
   <% end %>
 <% end %>
+
+<%#   <%= link_to "random link", root_path %>

@@ -17,7 +17,7 @@ document.addEventListener("turbo:load", () => {
 })
 
 
-document.addEventListener("turbo:load", () => {
+/* document.addEventListener("turbo:load", () => {
 const listItems = document.querySelectorAll(".boolean");
 const checkedItems = []
 
@@ -39,5 +39,5 @@ const checkedItems = []
     })
   });
 
-});
+}); */
 // console.log(listItems.checked)
