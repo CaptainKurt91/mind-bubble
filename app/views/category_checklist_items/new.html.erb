@@ -1,2 +1,4 @@
-<h1>CategoryChecklistItems#new</h1>
-<p>Find me in app/views/category_checklist_items/new.html.erb</p>
+<%= simple_form_for [@category_checklist, @category_checklist_item] do |f| %>
+  <%= f.input :description %>
+  <%= f.submit "Add list" %>
+<% end %>

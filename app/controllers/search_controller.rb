@@ -9,5 +9,6 @@ class SearchController < ApplicationController
     elsif @result[0].searchable_type == "Task"
       redirect_to task_path(@result[0].searchable_id)
     end
+    raise
   end
 end
