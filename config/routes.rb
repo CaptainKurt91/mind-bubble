@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :category_checklists, only: [:show]
 
   resources :category_checklists, only: [:show] do
-    resources :category_checklist_items, only: [:new, :create]
+    resources :category_checklist_items, only: [:show, :new, :create]
   end
 
   resources :tasks, only: [:show] do
