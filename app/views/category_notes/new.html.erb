@@ -1,6 +1,14 @@
-<%= simple_form_for [@category, @category_note] do |f| %>
-<%= f.input :name %>
-<%= f.input :content, as: :text %>
-<%= f.input :end_date, as: :date %>
-<%= f.submit "Add note" %>
-<% end %>
+<div class="main-container">
+  <div class="form-container">
+    <%= simple_form_for [@category, @category_note] do |f| %>
+    <h5><%= f.input :name %></h5>
+    <div class="add-task-container">
+      <%= f.input :content, as: :text %>
+      <%= f.input :end_date, as: :date, html5: true  %>
+    </div>
+    <div class="add-button">
+      <%= f.submit "Add note" %>
+    </div>
+    <% end %>
+  </div>
+</div>

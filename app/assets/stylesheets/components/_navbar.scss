@@ -80,6 +80,7 @@ button {
 
 /* Dropup content (Hidden by Default) */
 .dropup-content {
+
   position: absolute;
   bottom: 75px;
   background-color: rgba(239, 238, 230, 0.6);
@@ -89,6 +90,20 @@ button {
   border-radius: 10px;
   transition: 0.6s;
   text-align: center;
+
+}
+.drp-cnt-cent{
+
+  position: absolute;
+  bottom: 75px;
+  background-color: rgba(239, 238, 230, 0.6);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 11;
+  border-radius: 10px;
+  transition: 0.6s;
+  text-align: center;
+
 }
 
 /* Links inside the dropup */
