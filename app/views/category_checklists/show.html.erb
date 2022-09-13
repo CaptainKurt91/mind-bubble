@@ -24,3 +24,10 @@
   <% end %>
 </ul>
 <div class="link"><%= link_to "Add list", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
+<script>
+  fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+</script>
