@@ -1,28 +1,32 @@
 <%= @task_checklist.name %>
 
-<div class="progress-bar mb-3">
-  <div id="progression">
+<div data-controller="task-item">
+  <div class="progress-bar mb-3">
+    <div data-task-item-target="progression" id="progression"></div>
   </div>
-</div>
 
-<ul>
-  <% @task_checklist.task_checklist_items.each do |item| %>
-    <li class="check">
+  <ul>
+    <% @task_checklist.task_checklist_items.each do |item| %>
+      <li class="check">
 
-      <div>
-        <input type="checkbox" class="check-item">
-        <%= item.description %>
-      </div>
+        <div>
+          <input type="checkbox"
+                 data-id= <%=item.id%>
+                 data-action="task-item#toggle"
+                 data-task-item-target="state"
+                 <% if item.state %> checked <% end %>>
+          <%= item.description %>
+        </div>
 
-      <div class="edit-delete">
-        <%= link_to "edit", edit_task_checklist_item_path(item) %>
-        <%= button_to task_checklist_item_path(item), method: :delete do %>
-          delete
-        <% end %>
-      </div>
+        <div class="edit-delete">
+          <%= link_to "edit", edit_task_checklist_item_path(item) %>
+          <%= button_to task_checklist_item_path(item), method: :delete do %>
+            delete
+          <% end %>
+        </div>
 
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
 
 <div class="link"><%= link_to "Add list", new_task_checklist_task_checklist_item_path(@task_checklist) %></div>
