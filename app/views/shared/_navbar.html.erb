@@ -1,7 +1,10 @@
 <div class="navbar">
-  <button onclick="history.back()">
+  <%# <button onclick="history.back()">
     <i class="fa-solid fa-arrow-left"></i>
-  </button>
+  </button> %>
+  <%# <% arrow = "<i class="fa-solid fa-arrow-left"></i>"  %>
+  <%= link_to_previous_page("←")  %>
+
   <a href="/categories"><i class="fa-solid fa-house"></i></a>
   <%= render "/shared/add_button" %>
 
@@ -15,7 +18,6 @@
     <% if current_user %>
       <a href="#avatar"><i class="fa-regular fa-user" id="dropup-profile"></i></a>
       <div class="dropup-content drp-cnt-right" style="right: -300px">
-        <a href="#">Profile</a>
         <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
       </div>
     <% else %>
