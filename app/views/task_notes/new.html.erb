@@ -1,0 +1,6 @@
+<%= simple_form_for [@task, @task_note] do |f| %>
+<%= f.input :name %>
+<%= f.input :content, as: :text %>
+<%= f.input :end_date, as: :date %>
+<%= f.submit "Add note" %>
+<% end %>

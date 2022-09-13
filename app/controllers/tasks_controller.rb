@@ -14,6 +14,9 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @components = @task.components
+    @task_note = @task.task_notes
+    @task_checklist = @task.task_checklists
+    @output = @task_note + @task_checklist
+    @sorted = @output.sort_by { |date| date.created_at }
   end
 end

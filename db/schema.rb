@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_13_053313) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,15 +50,40 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
     t.index ["home_id"], name: "index_categories_on_home_id"
   end
 
-  create_table "components", force: :cascade do |t|
-    t.string "type"
-    t.text "content"
-    t.date "date"
+  create_table "category_checklist_items", force: :cascade do |t|
+    t.string "description"
+    t.boolean "state"
+    t.bigint "category_checklist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "task_id", null: false
+    t.index ["category_checklist_id"], name: "index_category_checklist_items_on_category_checklist_id"
+  end
+
+  create_table "category_checklists", force: :cascade do |t|
     t.string "name"
-    t.index ["task_id"], name: "index_components_on_task_id"
+    t.date "end_date"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_checklists_on_category_id"
+  end
+
+  create_table "category_files", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_files_on_category_id"
+  end
+
+  create_table "category_notes", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "end_date"
+    t.index ["category_id"], name: "index_category_notes_on_category_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -68,15 +93,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
     t.index ["user_id"], name: "index_homes_on_user_id"
   end
 
-  create_table "lists", force: :cascade do |t|
-    t.string "content"
-    t.boolean "state", default: false
-    t.bigint "component_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["component_id"], name: "index_lists_on_component_id"
-  end
-
   create_table "pg_search_documents", force: :cascade do |t|
     t.text "content"
     t.string "searchable_type"
@@ -84,6 +100,42 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
+  end
+
+  create_table "task_checklist_items", force: :cascade do |t|
+    t.string "description"
+    t.string "state"
+    t.bigint "task_checklist_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_checklist_id"], name: "index_task_checklist_items_on_task_checklist_id"
+  end
+
+  create_table "task_checklists", force: :cascade do |t|
+    t.string "name"
+    t.date "end_date"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_checklists_on_task_id"
+  end
+
+  create_table "task_files", force: :cascade do |t|
+    t.string "name"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_files_on_task_id"
+  end
+
+  create_table "task_notes", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.date "end_date"
+    t.bigint "task_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_notes_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -110,8 +162,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_09_111653) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "homes"
-  add_foreign_key "components", "tasks"
+  add_foreign_key "category_checklist_items", "category_checklists"
+  add_foreign_key "category_checklists", "categories"
+  add_foreign_key "category_files", "categories"
+  add_foreign_key "category_notes", "categories"
   add_foreign_key "homes", "users"
-  add_foreign_key "lists", "components"
+  add_foreign_key "task_checklist_items", "task_checklists"
+  add_foreign_key "task_checklists", "tasks"
+  add_foreign_key "task_files", "tasks"
+  add_foreign_key "task_notes", "tasks"
   add_foreign_key "tasks", "categories"
 end
