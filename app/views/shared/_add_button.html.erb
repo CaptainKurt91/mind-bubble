@@ -5,10 +5,12 @@
   <% unless @category.nil? || @sorted.nil? || @sorted.count >= 6 %>
     <div class="dropup">
       <a href="#avatar"><i class="fa-solid fa-plus new" id="dropup-add"></i></a>
-      <div class="dropup-content drp-cnt-cent" style="display: none;">
-        <%= link_to "Checklist",  new_category_category_checklist_path(@category) %>
-        <%= link_to "Note",  new_category_category_note_path(@category) %>
-        <%= link_to "Task",  new_category_task_path(@category)  %>
+      <div class="dropup-content dropup-content-btm drp-cnt-cent " >
+        <ol>
+          <%= link_to "Checklist",  new_category_category_checklist_path(@category) %>
+          <%= link_to "Note",  new_category_category_note_path(@category) %>
+          <%= link_to "Task",  new_category_task_path(@category)  %>
+        </ol>
       </div>
     </div>
   <% else %>
