@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.1.2"
 
 #my gems
+gem "simple_calendar", "~> 2.4"
+
 gem "dotenv-rails", groups: [:development, :test]
 
 gem "cloudinary"

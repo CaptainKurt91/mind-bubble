@@ -6,6 +6,7 @@
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "simple_calendar";
 
 // Your CSS partials
 @import "components/index";
@@ -13,3 +14,4 @@
 
 @import "components/navbar";
 @import "components/searchbar";
+@import "components/modal"

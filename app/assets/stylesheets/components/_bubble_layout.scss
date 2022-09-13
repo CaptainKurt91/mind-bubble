@@ -4,6 +4,21 @@
   margin: 0 auto;
 }
 
+.progress-bar {
+  width: 80%;
+  height: 10px;
+  border-radius: 30px;
+  border: 2px solid black;
+  margin: 0 auto;
+}
+
+#progression {
+  width: 0%;
+  background-color: #797D62;
+  height: 10px;
+  transition: 0.4s;
+}
+
 .top-display {
   width: 100%;
   height: 25%;
@@ -48,8 +63,6 @@
 .main-title {
   text-align: center;
 }
-
-
 
 .bbl {
   width: 90px;

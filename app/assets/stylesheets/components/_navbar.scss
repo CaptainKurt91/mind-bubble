@@ -29,9 +29,6 @@
     color: rgba(226, 149, 120, 1);
   }
 
-  .fa-calendar-days {
-    color: rgba(255, 176, 103, 0.8);
-  }
   .fa-user {
     color: green;
   }
@@ -49,6 +46,9 @@ button {
   cursor: pointer;
   .fa-arrow-left {
     color: rgba(162, 211, 194, 1);
+  }
+  .fa-calendar-days {
+    color: rgba(255, 176, 103, 0.8);
   }
 }
 /* Change the color of links on hover */
@@ -100,3 +100,8 @@ button {
   text-decoration: none;
   display: block;
 }
+
+/* Modal style */
+ .modal-content {
+  border-radius: 10px;
+ }

@@ -1,19 +1,26 @@
 <h1><%= @component.name %></h1>
+
+
+ <div class="progress-bar mb-3">
+  <div id="progression">
+  </div>
+</div>
+
+<ul>
+
   <% @component.lists.each do |list| %>
   <li class="check">
     <div>
-      <%= check_box_tag (:list)%><%= label_tag %>
+    <input type="checkbox" class="check-item">
       <%= list.content %>
     </div>
     <div class="edit-delete">
       <%= link_to "edit", edit_list_path(list) %>
-        <%= button_to list_path(list), method: :delete do %>
-          delete
-         <% end %>
+      <%= button_to list_path(list), method: :delete do %>
+        delete
+      <% end %>
     </div>
-
   </li>
   <% end %>
 </ul>
-
 <div class="link"><%= link_to "Add list", new_component_list_path(@component) %></div>
