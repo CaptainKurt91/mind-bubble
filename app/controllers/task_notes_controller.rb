@@ -1,4 +1,6 @@
 class TaskNotesController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
+  
   def new
     @task = Task.find(params[:task_id])
     @task_note = TaskNote.new

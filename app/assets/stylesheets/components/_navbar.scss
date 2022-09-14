@@ -2,12 +2,12 @@
 .navbar {
   display: flex;
   justify-content: space-around;
-  background-color: rgba(239, 238, 230, 0.6);
- // overflow: hidden;
+  background-color: rgba(239, 238, 230, 1);
   position: fixed;
   bottom: 0;
   width: 100%;
   border-top: 2px solid rgba(153, 123, 102, 1) !important;
+  z-index: 1;
 }
 
 
@@ -76,34 +76,21 @@ button {
 .dropup {
   position: relative;
   display: inline-block;
+  z-index: -1;
 }
 
 /* Dropup content (Hidden by Default) */
 .dropup-content {
-
   position: absolute;
+  margin-left: -50px;
   bottom: 75px;
   background-color: rgba(239, 238, 230, 0.6);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 11;
   border-radius: 10px;
   transition: 0.6s;
   text-align: center;
-
-}
-.drp-cnt-cent{
-
-  position: absolute;
-  bottom: 75px;
-  background-color: rgba(239, 238, 230, 0.6);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 11;
-  border-radius: 10px;
-  transition: 0.6s;
-  text-align: center;
-
+  z-index: -1;
 }
 
 /* Links inside the dropup */
@@ -112,4 +99,3 @@ button {
   padding: 12px 16px;
   text-decoration: none;
 }
-

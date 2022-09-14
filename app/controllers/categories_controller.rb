@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
   def index
     @categories = Category.all
   end
