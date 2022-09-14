@@ -26,7 +26,7 @@ document.addEventListener("turbo:load", () => {
     if (dropupCenter.style.bottom == "-160px") {
       dropupCenter.style.bottom = "75px";
     } else {
-      dropupCenter.style.bottom = "75px";
+      dropupCenter.style.bottom = "-160px";
     }
   });
 });
