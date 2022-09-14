@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :remember_page, only: [:index, :show]
-  
+
   def new
     @category = Category.find(params[:category_id])
     @task = Task.new
