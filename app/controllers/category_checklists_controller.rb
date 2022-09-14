@@ -1,6 +1,6 @@
 class CategoryChecklistsController < ApplicationController
   before_action :remember_page, only: [:index, :show]
-  
+
   def new
     @category = Category.find(params[:category_id])
     @category_checklist = CategoryChecklist.new
@@ -17,6 +17,7 @@ class CategoryChecklistsController < ApplicationController
 
   def show
     @category_checklist = CategoryChecklist.find(params[:id])
+    @name = "category"
   end
 
   def edit

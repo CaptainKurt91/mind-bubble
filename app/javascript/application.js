@@ -12,48 +12,23 @@ document.addEventListener("turbo:load", () => {
 
   dropupProfile.addEventListener("click", function (e) {
     e.preventDefault();
-    if (dropupRight.style.right == "-300px") {
-      dropupRight.style.right = "5px";
+    if (dropupRight.style.right == "-210px") {
+      dropupRight.style.right = "0px";
     } else {
-      dropupRight.style.right = "-300px";
+      dropupRight.style.right = "-210px";
     }
   });
+
+  console.log("hey");
 
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
-
-    if (dropupCenter.style.display == "none") {
-      dropupCenter.style.display = "block";
+    if (dropupCenter.style.bottom == "-180px") {
+      dropupCenter.style.bottom = "75px";
+      dropupCenter.style.opacity = "1";
     } else {
-      dropupCenter.style.display = "none"
+      dropupCenter.style.bottom = "-180px";
+      dropupCenter.style.opacity = "0";
     }
   });
-});
-
-document.addEventListener("turbo:load", () => {
-  const listItems = document.querySelectorAll(".check-item");
-  const checkedItems = [];
-
-  listItems.forEach((item) => {
-    if (item.checked) {
-      checkedItems.push(item);
-    }
-    item.addEventListener("change", (e) => {
-      e.preventDefault();
-      if (item.checked) {
-        checkedItems.push(item);
-      } else {
-        checkedItems.pop();
-      }
-      updateProgressBar();
-    });
-  });
-
-  function updateProgressBar() {
-    const test = listItems.length;
-    const test2 = checkedItems.length;
-    const progression = document.getElementById("progression");
-    progression.style.width = `${(test2 / test) * 100}%`;
-  }
-  updateProgressBar();
 });

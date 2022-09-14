@@ -1,10 +1,21 @@
 .search {
-  width: 350px;
+  width: 345px;
   margin: 0 auto;
-  margin-top: 40px;
-  margin-bottom: 70px;
+  margin-top: 15px;
+  margin-bottom: 22px;
 }
 
+.search input {
+  border: 1px solid #997b66;
+  background-color: #fff8e7;
+  border-radius: 50px;
+}
+
+.search input:focus {
+  outline: none;
+  border: 2px solid #997b66;
+  background-color: #fff8e7;
+}
 // .search-form-control {
 //   position: relative;
 //   margin-left: 15px;
@@ -22,7 +33,6 @@
 //   border: none;
 //   color: #997b66;
 // }
-
 
 // .search-form-control .form-control {
 //   height: 3.5rem;
