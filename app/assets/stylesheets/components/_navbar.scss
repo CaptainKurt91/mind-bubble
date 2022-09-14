@@ -1,12 +1,12 @@
 .navbar {
   display: flex;
   justify-content: space-around;
-  background-color: rgba(239, 238, 230, 0.6);
-  // overflow: hidden;
+  background-color: rgba(239, 238, 230, 1);
   position: fixed;
   bottom: 0;
   width: 100%;
   border-top: 2px solid rgba(153, 123, 102, 1) !important;
+  z-index: 1;
 }
 
 /* Style the links inside the navigation bar */
@@ -74,6 +74,7 @@ button {
 .dropup {
   position: relative;
   display: inline-block;
+  z-index: -1;
 }
 
 /* Dropup content (Hidden by Default) */

@@ -1,4 +1,6 @@
 class CategoryNotesController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
+  
   def new
     @category = Category.find(params[:category_id])
     @category_note = CategoryNote.new
@@ -16,6 +18,25 @@ class CategoryNotesController < ApplicationController
   def show
     @category_note = CategoryNote.find(params[:id])
   end
+
+  def edit
+    @note = CategoryNote.find(params[:id])
+  end
+
+  def update
+    @note = CategoryNote.find(params[:id])
+    @note.update(name: params[:category_note][:name], content:  params[:category_note][:content], end_date: params[:category_note][:end_date])
+    @note.save
+    redirect_to category_note_path(@note)
+  end
+
+  def destroy
+    @note = CategoryNote.find(params[:id])
+    @category = Category.find(@note[:category_id])
+    @note.destroy
+    redirect_to category_path(@category)
+  end
+
 
   private
 

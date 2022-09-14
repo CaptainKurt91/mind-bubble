@@ -1,4 +1,6 @@
 class CategoryChecklistsController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
+
   def new
     @category = Category.find(params[:category_id])
     @category_checklist = CategoryChecklist.new
@@ -15,6 +17,25 @@ class CategoryChecklistsController < ApplicationController
 
   def show
     @category_checklist = CategoryChecklist.find(params[:id])
+    @name = "category"
+  end
+
+  def edit
+    @checklist = CategoryChecklist.find(params[:id])
+  end
+
+  def update
+    @checklist = CategoryChecklist.find(params[:id])
+    @checklist.update(name: params[:category_checklist][:name], end_date: params[:category_checklist][:end_date])
+    @checklist.save
+    redirect_to category_checklist_path(@checklist)
+  end
+
+  def destroy
+    @checklist = CategoryChecklist.find(params[:id])
+    @category = Category.find(@checklist[:category_id])
+    @checklist.destroy
+    redirect_to category_path(@category)
   end
 
   private

@@ -4,8 +4,11 @@
 
 import { application } from "./application"
 
+import CatItemController from "./cat_item_controller"
+application.register("cat-item", CatItemController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
-import ItemController from "./item_controller"
-application.register("item", ItemController)
+import TaskItemController from "./task_item_controller"
+application.register("task-item", TaskItemController)

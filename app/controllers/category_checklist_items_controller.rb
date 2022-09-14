@@ -1,9 +1,9 @@
 class CategoryChecklistItemsController < ApplicationController
-  
+
   def show
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
   end
-  
+
   def new
     @category_checklist = CategoryChecklist.find(params[:category_checklist_id])
     @category_checklist_item = CategoryChecklistItem.new
@@ -22,8 +22,9 @@ class CategoryChecklistItemsController < ApplicationController
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
     @category_checklist_item.update(category_checklist_item_params)
     @category_checklist_item.save
+
     respond_to do |format|
-      format.js #add this at the beginning to make sure the form is populated.
+      format.js
     end
   end
 

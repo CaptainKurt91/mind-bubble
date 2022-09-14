@@ -1,4 +1,6 @@
 class TaskChecklistsController < ApplicationController
+  before_action :remember_page, only: [:index, :show]
+
   def new
     @task = Task.find(params[:task_id])
     @task_checklist = TaskChecklist.new
@@ -15,6 +17,25 @@ class TaskChecklistsController < ApplicationController
 
   def show
     @task_checklist = TaskChecklist.find(params[:id])
+    @name = "task"
+  end
+
+  def edit
+    @checklist = TaskChecklist.find(params[:id])
+  end
+
+  def update
+    @checklist = TaskChecklist.find(params[:id])
+    @checklist.update(name: params[:task_checklist][:name], end_date: params[:task_checklist][:end_date])
+    @checklist.save
+    redirect_to task_checklist_path(@checklist)
+  end
+
+  def destroy
+    @checklist = TaskChecklist.find(params[:id])
+    @task = Task.find(@checklist[:task_id])
+    @checklist.destroy
+    redirect_to task_path(@task)
   end
 
   private
