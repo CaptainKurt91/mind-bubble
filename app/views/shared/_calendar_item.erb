@@ -1,0 +1,9 @@
+<% if item.class == CategoryNote %>
+  <%= link_to item.name, category_note_path(item), data: {turbo_frame: "_top"} %>
+<% elsif item.class == CategoryChecklist %>
+  <%= link_to item.name, category_checklist_path(item), data: {turbo_frame: "_top"} %>
+<% elsif item.class == TaskNote %>
+  <%= link_to item.name, task_note_path(item), data: {turbo_frame: "_top"} %>
+<% elsif item.class == TaskChecklist %>
+  <%= link_to item.name, task_checklist_path(item), data: {turbo_frame: "_top"} %>
+<% end %>

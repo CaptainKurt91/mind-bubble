@@ -1,6 +1,6 @@
 class CategoryNotesController < ApplicationController
   before_action :remember_page, only: [:index, :show]
-  
+
   def new
     @category = Category.find(params[:category_id])
     @category_note = CategoryNote.new
@@ -41,6 +41,6 @@ class CategoryNotesController < ApplicationController
   private
 
   def category_note_params
-    params.require(:category_note).permit(:name, :content)
+    params.require(:category_note).permit(:name, :content, :end_date)
   end
 end

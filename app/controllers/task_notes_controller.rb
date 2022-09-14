@@ -1,6 +1,6 @@
 class TaskNotesController < ApplicationController
   before_action :remember_page, only: [:index, :show]
-  
+
   def new
     @task = Task.find(params[:task_id])
     @task_note = TaskNote.new
@@ -41,6 +41,6 @@ class TaskNotesController < ApplicationController
   private
 
   def task_note_params
-    params.require(:task_note).permit(:name, :content)
+    params.require(:task_note).permit(:name, :content, :end_date)
   end
 end
