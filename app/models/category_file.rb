@@ -1,6 +1,6 @@
 class CategoryFile < ApplicationRecord
   belongs_to :category
-  
-  belongs_to :home, through: :category
-  belongs_to :user, through: :home
+
+  has_one :home, through: :category
+  has_one :user, through: :home
 end

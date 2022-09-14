@@ -21,10 +21,11 @@ document.addEventListener("turbo:load", () => {
 
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
+
     if (dropupCenter.style.display == "none") {
       dropupCenter.style.display = "block";
     } else {
-      dropupCenter.style.display = "none";
+      dropupCenter.style.display = "none"
     }
   });
 });
@@ -47,6 +48,7 @@ document.addEventListener("turbo:load", () => {
       updateProgressBar();
     });
   });
+
   function updateProgressBar() {
     const test = listItems.length;
     const test2 = checkedItems.length;
