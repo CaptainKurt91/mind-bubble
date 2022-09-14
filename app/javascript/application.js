@@ -22,10 +22,10 @@ document.addEventListener("turbo:load", () => {
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
 
-    if (dropupCenter.style.bottom == "-100px") {
-      dropupCenter.style.bottom = "100px";
+    if (dropupCenter.style.display == "none") {
+      dropupCenter.style.display = "block";
     } else {
-      dropupCenter.style.bottom = "-100px"
+      dropupCenter.style.display = "none"
     }
   });
 });
