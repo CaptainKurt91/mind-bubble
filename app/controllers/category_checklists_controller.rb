@@ -41,6 +41,6 @@ class CategoryChecklistsController < ApplicationController
   private
 
   def category_checklist_params
-    params.require(:category_checklist).permit(:name)
+    params.require(:category_checklist).permit(:name, :end_date)
   end
 end

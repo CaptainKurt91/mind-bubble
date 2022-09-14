@@ -13,11 +13,10 @@
     }
  }
 
+ .simple-calendar {
 
-.simple-calendar {
-
-  th {
-    background-color: rgb(255, 248, 231);
+   th {
+     background-color: rgb(255, 248, 231);
     border: .5px solid rgba(153, 123, 102, 0.6);
   }
 
@@ -31,7 +30,16 @@
 
   a {
     text-decoration: none;
+    color: #E29578
+
   }
+
+  .calendar-heading {
+   display: flex;
+   justify-content: space-around;
+   text-align: center;
+   font-weight: bold;
+ }
 
  /*  .wday-0 {}
   .wday-1 {}

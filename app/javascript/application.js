@@ -12,14 +12,13 @@ document.addEventListener("turbo:load", () => {
 
   dropupProfile.addEventListener("click", function (e) {
     e.preventDefault();
-    if (dropupRight.style.right == "-210px") {
+    if (dropupRight.style.right == "-220px") {
       dropupRight.style.right = "0px";
     } else {
-      dropupRight.style.right = "-210px";
+      dropupRight.style.right = "-220px";
     }
   });
 
-  console.log("hey");
 
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
