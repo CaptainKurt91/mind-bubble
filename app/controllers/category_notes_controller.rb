@@ -41,6 +41,6 @@ class CategoryNotesController < ApplicationController
   private
 
   def category_note_params
-    params.require(:category_note).permit(:name, :content)
+    params.require(:category_note).permit(:name, :content, :end_date)
   end
 end

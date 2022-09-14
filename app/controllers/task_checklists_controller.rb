@@ -41,6 +41,6 @@ class TaskChecklistsController < ApplicationController
   private
 
   def task_checklist_params
-    params.require(:task_checklist).permit(:name)
+    params.require(:task_checklist).permit(:name, :end_date)
   end
 end
