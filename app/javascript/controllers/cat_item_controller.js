@@ -8,12 +8,12 @@ export default class extends Controller {
   }
 
   toggle(event) {
-    console.log(this.stateTarget.checked)
+    console.log(event.currentTarget.checked)
     let formData = new FormData();
-    formData.append("category_checklist_item[state]", this.stateTarget.checked);
+    formData.append("category_checklist_item[state]", event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
 
-    fetch(`/category_checklist_items/${event.target.dataset.id}`, {
+    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}`, {
       body: formData,
       method: "PATCH",
       credentials: "include",
@@ -26,8 +26,7 @@ export default class extends Controller {
         event.target.checked = !event.target.checked;
       }
     });
-    console.log(event.target.dataset.id);
-    // this.updateProgressBar()
+   this.updateProgressBar()
   }
 
   updateProgressBar() {
@@ -36,9 +35,7 @@ export default class extends Controller {
     this.stateTargets.forEach((target) => {
      if(target.checked) {
       checkedItems.push(target)
-    } else {
-      checkedItems.push(target)
-    }
+      }
     });
 
     this.progressionTarget.style.width = `${(checkedItems.length / this.stateTargets.length) * 100}%`;

@@ -1,6 +1,6 @@
 class TaskChecklistsController < ApplicationController
   before_action :remember_page, only: [:index, :show]
-  
+
   def new
     @task = Task.find(params[:task_id])
     @task_checklist = TaskChecklist.new
@@ -17,6 +17,7 @@ class TaskChecklistsController < ApplicationController
 
   def show
     @task_checklist = TaskChecklist.find(params[:id])
+    @name = "task"
   end
 
   private

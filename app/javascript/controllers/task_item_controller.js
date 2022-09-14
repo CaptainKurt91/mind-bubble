@@ -8,11 +8,12 @@ export default class extends Controller {
   }
 
   toggle(event) {
+    console.log(event.currentTarget.checked)
     let formData = new FormData();
-    formData.append("task_checklist_item[state]", this.stateTarget.checked);
+    formData.append("task_checklist_item[state]", event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
 
-    fetch(`/task_checklist_items/${event.target.dataset.id}`, {
+    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}`, {
       body: formData,
       method: "PATCH",
       credentials: "include",
@@ -32,8 +33,10 @@ export default class extends Controller {
     const checkedItems = [];
 
     this.stateTargets.forEach((target) => {
-     if(target.checked) checkedItems.push(target)
-    });
+      if(target.checked) {
+       checkedItems.push(target)
+     }
+     });
 
     this.progressionTarget.style.width = `${(checkedItems.length / this.stateTargets.length) * 100}%`;
   }

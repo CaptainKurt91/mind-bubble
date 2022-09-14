@@ -9,10 +9,10 @@
     <% @category_checklist.category_checklist_items.each do |item| %>
       <li class="check">
 
-        <div
-            data-cat-item-update-url="<%= "/category_checklist_items/#{item.id}" %>">
-          <input class="check-item" type="checkbox"
+        <div>
+          <input class="check-item category" type="checkbox"
                       data-id= <%=item.id%>
+                      data-name= <%= @name %>
                       data-action="cat-item#toggle"
                       data-cat-item-target="state"
                       <%# data-progress-target="item" %>
