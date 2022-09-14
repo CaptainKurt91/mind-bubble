@@ -25,13 +25,13 @@
     </li>
   <% end %>
 </ul>
+
 <div class="edit-delete-links">
-  <div class="link"><%= link_to "Add list", new_task_checklist_task_checklist_item_path(@task_checklist) %></div>
 
   <div class="edit">
     <%= link_to "Edit", edit_task_checklist_path(@task_checklist) %>
   </div>
-  <div class="deletes">
+  <div class="delete">
     <%= button_to task_checklist_path(@task_checklist), method: :delete do %>
       delete
     <% end %>
