@@ -5,7 +5,7 @@
   <% unless @category.nil? || @sorted.nil? || @sorted.count >= 6 %>
     <div class="dropup">
       <a href="#avatar"><i class="fa-solid fa-plus new" id="dropup-add"></i></a>
-      <div class="dropup-content dropup-content-btm drp-cnt-cent " >
+      <div class="dropup-content drp-cnt-cent" style="bottom:-160px;" >
         <ol>
           <%= link_to "Checklist",  new_category_category_checklist_path(@category) %>
           <%= link_to "Note",  new_category_category_note_path(@category) %>
@@ -23,7 +23,7 @@
   <% unless @task.nil? || @sorted.nil? || @sorted.count >= 6 %>
     <div class="dropup">
       <a href="#avatar"><i class="fa-solid fa-plus new" id="dropup-add"></i></a>
-      <div class="dropup-content drp-cnt-cent" style="display: none;">
+      <div class="dropup-content drp-cnt-cent" style="bottom:-160px;">
         <%= link_to "Checklist",  new_task_task_checklist_path(@task) %>
         <%= link_to "Note",  new_task_task_note_path(@task) %>
       </div>

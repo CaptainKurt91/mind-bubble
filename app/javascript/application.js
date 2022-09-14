@@ -19,12 +19,14 @@ document.addEventListener("turbo:load", () => {
     }
   });
 
+  console.log("hey");
+
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
-    if (dropupCenter.style.display == "none") {
-      dropupCenter.style.display = "block";
+    if (dropupCenter.style.bottom == "-160px") {
+      dropupCenter.style.bottom = "75px";
     } else {
-      dropupCenter.style.display = "none";
+      dropupCenter.style.bottom = "75px";
     }
   });
 });
