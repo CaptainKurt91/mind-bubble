@@ -19,6 +19,24 @@ class TaskChecklistsController < ApplicationController
     @task_checklist = TaskChecklist.find(params[:id])
   end
 
+  def edit
+    @checklist = TaskChecklist.find(params[:id])
+  end
+
+  def update
+    @checklist = TaskChecklist.find(params[:id])
+    @checklist.update(name: params[:task_checklist][:name], end_date: params[:task_checklist][:end_date])
+    @checklist.save
+    redirect_to task_checklist_path(@checklist)
+  end
+
+  def destroy
+    @checklist = TaskChecklist.find(params[:id])
+    @task = Task.find(@checklist[:task_id])
+    @checklist.destroy
+    redirect_to task_path(@task)
+  end
+
   private
 
   def task_checklist_params

@@ -1,0 +1,5 @@
+<%= simple_form_for @checklist do |f| %>
+      <%= f.input :name %>
+      <%= f.input :end_date, as: :date, html5: true %>
+      <%= f.submit "Edit" %>
+<% end %>
