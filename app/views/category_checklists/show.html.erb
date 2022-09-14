@@ -1,5 +1,8 @@
 <%= @category_checklist.name %>
-
+<%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
+<%= button_to category_checklist_path(@category_checklist), method: :delete do %>
+    delete
+<% end %>
  <div class="progress-bar mb-3">
   <div id="progression"></div>
 </div>
