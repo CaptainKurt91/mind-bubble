@@ -21,4 +21,22 @@ class TasksController < ApplicationController
     @output = @task_note + @task_checklist
     @sorted = @output.sort_by { |date| date.created_at }
   end
+
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @task.update(name: params[:task][:name])
+    @task.save
+    redirect_to task_path(@task)
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    @category = Category.find(@task[:category_id])
+    redirect_to category_path(@category)
+  end
 end

@@ -10,23 +10,23 @@ Rails.application.routes.draw do
     resources :category_checklists, only: [:new, :create]
   end
 
-  resources :category_notes, only: [:show]
-  resources :category_files, only: [:show]
-  resources :category_checklists, only: [:show]
+  resources :category_notes, only: [:show, :edit, :update, :destroy]
+  resources :category_files, only: [:show, :edit, :update, :destroy]
+  resources :category_checklists, only: [:show, :edit, :update, :destroy]
 
   resources :category_checklists, only: [:show] do
     resources :category_checklist_items, only: [:show, :new, :create]
   end
 
-  resources :tasks, only: [:show] do
+  resources :tasks, only: [:show, :edit, :update, :destroy] do
     resources :task_notes, only: [:new, :create]
     resources :task_files, only: [:new, :create]
     resources :task_checklists, only: [:new, :create]
   end
 
-  resources :task_notes, only: [:show]
-  resources :task_files, only: [:show]
-  resources :task_checklists, only: [:show]
+  resources :task_notes, only: [:show, :edit, :update, :destroy]
+  resources :task_files, only: [:show, :edit, :update, :destroy]
+  resources :task_checklists, only: [:show, :edit, :update, :destroy]
 
   resources :task_checklists, only: [:show] do
     resources :task_checklist_items, only: [:new, :create]
