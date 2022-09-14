@@ -19,41 +19,15 @@ document.addEventListener("turbo:load", () => {
     }
   });
 
+  console.log("hey");
+
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
-
-    if (dropupCenter.style.display == "none") {
-      dropupCenter.style.display = "block";
+    if (dropupCenter.style.bottom == "-160px") {
+      dropupCenter.style.bottom = "75px";
     } else {
-      dropupCenter.style.display = "none"
+      dropupCenter.style.bottom = "-160px";
     }
   });
 });
 
-document.addEventListener("turbo:load", () => {
-  const listItems = document.querySelectorAll(".check-item");
-  const checkedItems = [];
-
-  listItems.forEach((item) => {
-    if (item.checked) {
-      checkedItems.push(item);
-    }
-    item.addEventListener("change", (e) => {
-      e.preventDefault();
-      if (item.checked) {
-        checkedItems.push(item);
-      } else {
-        checkedItems.pop();
-      }
-      updateProgressBar();
-    });
-  });
-
-  function updateProgressBar() {
-    const test = listItems.length;
-    const test2 = checkedItems.length;
-    const progression = document.getElementById("progression");
-    progression.style.width = `${(test2 / test) * 100}%`;
-  }
-  updateProgressBar();
-});

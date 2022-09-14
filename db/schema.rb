@@ -52,7 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
 
   create_table "category_checklist_items", force: :cascade do |t|
     t.string "description"
-    t.boolean "state"
+    t.boolean "state", default: false, null: false
     t.bigint "category_checklist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,7 +104,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
 
   create_table "task_checklist_items", force: :cascade do |t|
     t.string "description"
-    t.string "state"
+    t.boolean "state", default: false, null: false
     t.bigint "task_checklist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
