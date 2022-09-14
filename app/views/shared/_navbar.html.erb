@@ -1,27 +1,20 @@
 <div class="navbar">
-  <%# <button onclick="history.back()">
-    <i class="fa-solid fa-arrow-left"></i>
-  </button> %>
-  <%# <% arrow = "<i class="fa-solid fa-arrow-left"></i>"  %>
-  <%= link_to_previous_page("←")  %>
-
-  <a href="/categories"><i class="fa-solid fa-house"></i></a>
+  <%= link_to_previous_page("🔙")  %>
+  <a href="/categories">🏠</a>
   <%= render "/shared/add_button" %>
 
-  <!-- Button trigger modal -->
-  <button type="button" data-bs-toggle="modal" data-bs-target="#calendar">
-    <i class="fa-solid fa-calendar-days"></i>
-  </button>
-
-
+<!-- Button trigger modal -->
+<button type="button" data-bs-toggle="modal" data-bs-target="#calendar">
+  📆
+</button>
   <div class="dropup">
     <% if current_user %>
-      <a href="#avatar"><i class="fa-regular fa-user" id="dropup-profile"></i></a>
+      <a href="#avatar" id="dropup-profile">👶</a>
       <div class="dropup-content drp-cnt-right" style="right: -300px">
         <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
       </div>
     <% else %>
-      <a href="#avatar"><i class="fa-regular fa-user red" id="dropup-profile"></i></a>
+      <a href="#avatar" id="dropup-profile">👶</a>
       <div class="dropup-content drp-cnt-right" style="right: -300px">
         <%= link_to "Sign in / Sign up", user_session_path %>
       </div>
