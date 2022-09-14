@@ -1,6 +1,6 @@
 module ApplicationHelper
   def link_to_previous_page(link_title)
-    return if session[:previous_pages].nil?
+    return unless session[:previous_pages].nil?
 
     url = session[:previous_pages][-2] # or params[:callback] obviously. :)
     url_w_params = url + (url.include?('?') ? '&' : '?') + 'is_back=true'

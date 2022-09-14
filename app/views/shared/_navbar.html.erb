@@ -8,13 +8,12 @@
     <div class="dropup">
       <% if current_user %>
         <a href="#avatar" id="dropup-profile">👶</a>
-        <div class="dropup-content drp-cnt-right" style="right:-210px;bottom:75px;">
-          <a href="#">Profile</a>
+        <div class="dropup-content drp-cnt-right" style="right:-220px;bottom:75px;">
           <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete} %>
         </div>
       <% else %>
         <a href="#avatar" id="dropup-profile">👶</a>
-        <div class="dropup-content drp-cnt-right" style="right:-210px; bottom:75px;">
+        <div class="dropup-content drp-cnt-right" style="right:-220px; bottom:75px;">
           <%= link_to "Sign in / Sign up", user_session_path %>
         </div>
       <% end %>
