@@ -12,10 +12,10 @@ document.addEventListener("turbo:load", () => {
 
   dropupProfile.addEventListener("click", function (e) {
     e.preventDefault();
-    if (dropupRight.style.right == "-300px") {
-      dropupRight.style.right = "5px";
+    if (dropupRight.style.right == "-210px") {
+      dropupRight.style.right = "0px";
     } else {
-      dropupRight.style.right = "-300px";
+      dropupRight.style.right = "-210px";
     }
   });
 
@@ -23,11 +23,12 @@ document.addEventListener("turbo:load", () => {
 
   dropupAdd.addEventListener("click", function (e) {
     e.preventDefault();
-    if (dropupCenter.style.bottom == "-160px") {
+    if (dropupCenter.style.bottom == "-180px") {
       dropupCenter.style.bottom = "75px";
+      dropupCenter.style.opacity = "1";
     } else {
-      dropupCenter.style.bottom = "-160px";
+      dropupCenter.style.bottom = "-180px";
+      dropupCenter.style.opacity = "0";
     }
   });
 });
-
