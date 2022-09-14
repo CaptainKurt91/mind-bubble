@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_calendar_items
   before_action :remember_page, only: [:index, :show]
   layout -> { "application" if turbo_frame_request? }
