@@ -1,4 +1,4 @@
-<%= @category_checklist.name %>
+%= @category_checklist.name %>
 
 <div data-controller="cat-item">
   <div class="progress-bar mb-3">
@@ -37,3 +37,10 @@
   </ul>
 </div>
 <div class="link"><%= link_to "Add list", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
+
+<div class="edit-delete-checklist">
+  <%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
+  <%= button_to category_checklist_path(@category_checklist), method: :delete do %>
+      delete
+  <% end %>
+</div>

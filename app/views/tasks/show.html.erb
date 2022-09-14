@@ -1,5 +1,8 @@
+
 <%= render "/shared/bubble_layout", main: @task, second: @sorted %>
-<%= link_to "Edit", edit_task_path(@task) %>
-<%= button_to task_path(@task), method: :delete do %>
+<div class="edit"><%= link_to "Edit", edit_task_path(@task) %></div>
+<div class="delete">
+  <%= button_to task_path(@task), method: :delete do %>
     delete
-<% end %>
+  <% end %>
+</div>

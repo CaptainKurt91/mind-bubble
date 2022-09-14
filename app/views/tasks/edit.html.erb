@@ -1,4 +1,10 @@
-<%= simple_form_for @task do |f| %>
-        <%= f.input :name %>
-        <%= f.submit "Edit"%>
-    <% end %>
+<div class="main-container">
+  <div class="form-container">
+   <%= simple_form_for @task do |f| %>
+   <h5><%= f.input :name %></h5>
+   <div class="add-button">
+     <%= f.submit "Edit"%>
+   </div>
+   <% end %>
+  </div>
+</div>

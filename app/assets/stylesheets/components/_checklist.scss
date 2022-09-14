@@ -10,7 +10,7 @@ h1 {
   height: 50px;
   padding: 10px;
   margin-left: -5px;
-  border-radius: 3px;
+  border-radius: 5px;
   margin-bottom: 20px;
   background-color: #FFF8E7;
   align-items: center;
@@ -21,7 +21,7 @@ h1 {
 .link a{
   text-decoration: none;
   border: 2px solid #997B66;
-  border-radius: 50px;
+  border-radius: 5px;
   background-color: #FFF8E7;
   margin-left: 150px;
   margin-top: 30px;
@@ -44,4 +44,38 @@ h1 {
   color: black;
   margin-right: 20px;
   margin-left: 20px;
+}
+.edit a{
+  text-decoration: none;
+  color: black;
+  border: 2px solid #997B66;
+  border-radius: 5px;
+  background-color: #FFF8E7;
+  margin-left: 330px;
+  margin-top: 30px;
+  width: fit-content;
+  height: 40px;
+  color: black;
+  padding: 5px;
+  position: absolute;
+  bottom: 90px;
+}
+.delete a{
+  text-decoration: none;
+  color: black;
+  border: 2px solid #997B66;
+  border-radius: 5px;
+  background-color: #FFF8E7;
+  margin-left: 250px;
+  margin-top: 30px;
+  width: fit-content;
+  height: 40px;
+  color: black;
+  padding: 5px;
+  position: absolute;
+  bottom: 90px;
+}
+
+.edit-delete-links {
+  margin: 0 auto;
 }
