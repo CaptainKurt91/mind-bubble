@@ -1,8 +1,3 @@
-<%= @category_checklist.name %>
-<%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
-<%= button_to category_checklist_path(@category_checklist), method: :delete do %>
-    delete
-<% end %>
  <div class="progress-bar mb-3">
   <div id="progression"></div>
 </div>
@@ -32,3 +27,11 @@
   <% end %>
 </ul>
 <div class="link"><%= link_to "Add list", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
+
+<div class="edit-delete-checklist">
+  <%= @category_checklist.name %>
+  <%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
+  <%= button_to category_checklist_path(@category_checklist), method: :delete do %>
+      delete
+  <% end %>
+</div>

@@ -1,4 +1,12 @@
-<%= simple_form_for [@category_checklist, @category_checklist_item] do |f| %>
-  <%= f.input :description %>
-  <%= f.submit "Add list" %>
-<% end %>
+<div class="main-container">
+  <div class="form-container">
+     <%= simple_form_for [@category_checklist, @category_checklist_item] do |f| %>
+     <div class="add-task-container">
+      <%= f.input :description %>
+      <div class="add-button">
+        <%= f.submit "Add list" %>
+      </div>
+     </div>
+    <% end %>
+  </div>
+</div>
