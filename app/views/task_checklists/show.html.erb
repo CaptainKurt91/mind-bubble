@@ -1,4 +1,8 @@
 <%= @task_checklist.name %>
+<%= link_to "Edit", edit_task_checklist_path(@task_checklist) %>
+<%= button_to task_checklist_path(@task_checklist), method: :delete do %>
+    delete
+<% end %>
 
 <div data-controller="task-item">
   <div class="progress-bar mb-3">

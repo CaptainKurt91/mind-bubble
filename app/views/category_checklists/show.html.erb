@@ -5,6 +5,11 @@
     <div data-cat-item-target="progression" id="progression"></div>
   </div>
 
+  <%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
+  <%= button_to category_checklist_path(@category_checklist), method: :delete do %>
+      delete
+  <% end %>
+
   <ul>
     <% @category_checklist.category_checklist_items.each do |item| %>
       <li class="check">
