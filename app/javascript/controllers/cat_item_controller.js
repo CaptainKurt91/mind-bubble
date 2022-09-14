@@ -8,6 +8,7 @@ export default class extends Controller {
   }
 
   toggle(event) {
+    console.log(this.stateTarget.checked)
     let formData = new FormData();
     formData.append("category_checklist_item[state]", this.stateTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
@@ -26,14 +27,18 @@ export default class extends Controller {
       }
     });
     console.log(event.target.dataset.id);
-    this.updateProgressBar()
+    // this.updateProgressBar()
   }
 
   updateProgressBar() {
     const checkedItems = [];
 
     this.stateTargets.forEach((target) => {
-     if(target.checked) checkedItems.push(target)
+     if(target.checked) {
+      checkedItems.push(target)
+    } else {
+      checkedItems.push(target)
+    }
     });
 
     this.progressionTarget.style.width = `${(checkedItems.length / this.stateTargets.length) * 100}%`;
