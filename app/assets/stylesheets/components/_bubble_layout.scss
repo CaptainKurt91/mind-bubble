@@ -6,17 +6,18 @@
 }
 
 .progress-bar {
-  width: 80%;
-  height: 10px;
+  width: 345px;
+  height: 18px;
   border-radius: 30px;
-  border: 2px solid black;
-  margin: 0 auto;
+  margin: 12px auto 40px auto;
+  background-color: #dad1cb;
 }
 
 #progression {
   width: 0%;
-  background-color: #797d62;
-  height: 10px;
+  background-color: #a2d3c2;
+  border-radius: 30px;
+  height: 18px;
   transition: 0.4s;
 }
 

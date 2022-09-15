@@ -1,13 +1,18 @@
-<%= @category_checklist.name %>
+<div class="main-tlist-ttl">
+  <h1 class="tlist-ttl"><%= @category_checklist.name %></h1>
+  <%= link_to "✏️", edit_category_checklist_path(@category_checklist) %>
+  <%= button_to category_checklist_path(@category_checklist), method: :delete do %>
+    🗑
+  <% end %>
+  </div>
+</div>
 
 <div data-controller="cat-item">
-  <div class="progress-bar mb-3">
+  <div class="progress-bar">
     <div data-cat-item-target="progression" id="progression"></div>
   </div>
 
-  
-
-  <ul>
+  <ul class="list-items">
     <% @category_checklist.category_checklist_items.each do |item| %>
       <li class="check">
 
@@ -23,9 +28,9 @@
         </div>
 
         <div class="edit-delete">
-          <%= link_to "edit", edit_category_checklist_item_path(item) %>
+          <%= link_to "✏️", edit_category_checklist_item_path(item) %>
           <%= button_to category_checklist_item_path(item), method: :delete do %>
-            delete
+            🗑
           <% end %>
         </div>
 
@@ -33,11 +38,4 @@
     <% end %>
   </ul>
 </div>
-<div class="link"><%= link_to "Add list", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
-
-<div class="edit-delete-checklist">
-  <%= link_to "Edit", edit_category_checklist_path(@category_checklist) %>
-  <%= button_to category_checklist_path(@category_checklist), method: :delete do %>
-      delete
-  <% end %>
-</div>
+<div class="link"><%= link_to "Add item", new_category_checklist_category_checklist_item_path(@category_checklist) %></div>
