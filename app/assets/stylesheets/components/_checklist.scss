@@ -1,38 +1,68 @@
-h1 {
+.main-tlist-ttl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 0 16px;
+    text-decoration: none;
+  }
+}
+
+.tlist-ttl {
   text-align: center;
   color: #000000;
+  margin: 0;
+  padding-top: 8px;
+}
+
+.list-items {
+  width: 100%;
+  padding: 0;
+  list-style: none;
 }
 
 .check {
-  list-style-type: none;
-  border: 2px solid #997B66;
-  width: 330px;
+  border: 1px solid #997b66;
+  width: 345px;
   height: 50px;
-  padding: 10px;
-  margin-left: -5px;
+  padding: 10px 20px;
+  margin: 0 auto;
   border-radius: 50px;
   margin-bottom: 20px;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
   align-items: center;
   display: flex;
   justify-content: space-between;
+  line-height: 0;
 }
 
-.link a{
-  text-decoration: none;
-  border: 2px solid #997B66;
-  border-radius: 50px;
-  background-color: #FFF8E7;
-  margin-left: 150px;
-  margin-top: 30px;
-  width: 100px;
-  height: 40px;
-  color: black;
-  padding: 5px;
+.check-item {
+  appearance: none;
+  background-color: #dfd8d3;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  margin-right: 10px;
+
+  &:checked {
+    background-color: #a2d3c2;
+  }
 }
 
 .link {
-  padding: 5px;
+  width: 96px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.link a {
+  text-decoration: none;
+  border-radius: 50px;
+  background-color: #997b66;
+  height: 40px;
+  padding: 6px 12px;
+  color: #fff;
 }
 
 .edit-delete {
@@ -45,33 +75,31 @@ h1 {
   margin-right: 20px;
   margin-left: 20px;
 }
-.edit a{
+.edit a {
   text-decoration: none;
   color: black;
-  border: 2px solid #997B66;
+  border: 2px solid #997b66;
   border-radius: 5px;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
   margin-top: 30px;
   width: fit-content;
   height: 40px;
   color: black;
   padding: 5px;
-  position:relative;
-  margin-top:100%;
+  position: relative;
+  margin-top: 100%;
 }
 .delete button {
   text-decoration: none;
   color: black;
-  border: 2px solid #997B66;
+  border: 2px solid #997b66;
   border-radius: 5px;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
   margin-top: 30px;
   width: fit-content;
   height: 40px;
   color: black;
   padding: 5px;
-  position:relative;
-  margin-top:100%;
-
-
+  position: relative;
+  margin-top: 100%;
 }

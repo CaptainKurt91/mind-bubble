@@ -1,12 +1,19 @@
- <h5><%= @task_checklist.name %></h5>
+ <div class="main-tlist-ttl">
+  <h1 class="tlist-ttl"><%= @task_checklist.name %></h1>
+  <%= link_to "✏️", edit_task_checklist_path(@task_checklist) %>
+  <%= button_to task_checklist_path(@task_checklist), method: :delete do %>
+    🗑
+  <% end %>
+  </div>
+ </div>
 
 <div data-controller="task-item">
-  <div class="progress-bar mb-3">
+  <div class="progress-bar">
     <div data-task-item-target="progression" id="progression"></div>
   </div>
 
 
-<ul>
+<ul class="list-items">
 
   <% @task_checklist.task_checklist_items.each do |item| %>
     <li class="check">
@@ -22,9 +29,9 @@
         </div>
 
         <div class="edit-delete">
-          <%= link_to "edit", edit_task_checklist_item_path(item) %>
+          <%= link_to "✏️", edit_task_checklist_item_path(item) %>
           <%= button_to task_checklist_item_path(item), method: :delete do %>
-            delete
+            🗑
           <% end %>
         </div>
 
@@ -33,17 +40,5 @@
       </li>
     <% end %>
   </ul>
+  <div class="link"><%= link_to "Add item", new_task_checklist_task_checklist_item_path(@task_checklist) %></div>
 
-
-<div class="edit-delete-links">
-  <div class="link"><%= link_to "Add list", new_task_checklist_task_checklist_item_path(@task_checklist) %></div>
-
-  <div class="edit">
-    <%= link_to "Edit", edit_task_checklist_path(@task_checklist) %>
-  </div>
-  <div class="delete">
-    <%= button_to task_checklist_path(@task_checklist), method: :delete do %>
-      delete
-    <% end %>
-  </div>
-</div>
