@@ -1,14 +1,12 @@
 <h1><%= @task_note.name %></h1>
 <div class="main-note">
-
   <p><%= @task_note.content %></p>
-
-  <div class="edit">
+</div>
+<div class="edit">
     <%= link_to "✏️", edit_task_note_path(@task_note) %>
-  </div>
-  <div class="delete">
+</div>
+<div class="delete">
     <%= button_to task_note_path(@task_note), method: :delete do %>
         🗑
     <% end %>
-  </div>
 </div>
