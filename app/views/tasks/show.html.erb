@@ -1,11 +1,1 @@
 <%= render "/shared/bubble_layout", main: @task, second: @sorted %>
-<div class="links-cont">
-  <div class="edit">
-    <%= link_to "✏️", edit_task_path(@task) %>
-  </div>
-  <div class="delete">
-    <%= button_to task_path(@task), method: :delete do %>
-      🗑
-    <% end %>
-  </div>
-</div>
