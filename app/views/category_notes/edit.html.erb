@@ -1,4 +1,4 @@
-<%= simple_form_for @note do |f| %>
+<%= simple_form_for @note, html: { autocomplete: "off" } do |f| %>
       <%= f.input :name %>
       <%= f.input :content %>
       <%= f.input :end_date, as: :date, html5: true %>
