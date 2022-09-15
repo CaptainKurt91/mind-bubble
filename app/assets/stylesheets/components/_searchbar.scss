@@ -6,15 +6,18 @@
 }
 
 .search input {
-  border: 1px solid #997b66;
-  background-color: #fff8e7;
+  border: none;
+  background-color: #dfd8d3;
   border-radius: 50px;
+
+  &:active {
+    outline: none !important;
+  }
 }
 
 .search input:focus {
-  outline: none;
+  background-color: #dfd8d3;
   border: 2px solid #997b66;
-  background-color: #fff8e7;
 }
 // .search-form-control {
 //   position: relative;
