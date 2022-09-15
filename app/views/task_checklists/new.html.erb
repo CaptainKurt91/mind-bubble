@@ -4,8 +4,9 @@
     <h5><%= f.input :name %></h5>
     <div class="add-task-container">
       <%= f.input :end_date, as: :date, html5: true %>
-      <div class="add-button">
-        <%= f.submit "Add Checklist" %>
+    <div class="link-container">
+      <div class="link">
+        <%= f.submit "Save" %>
       </div>
     </div>
     <% end %>
