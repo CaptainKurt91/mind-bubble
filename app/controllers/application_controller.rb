@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   before_action :remember_page, only: [:index, :show]
   layout -> { "application" if turbo_frame_request? }
 
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
+
   private
 
   def set_calendar_items
