@@ -56,7 +56,9 @@
   padding-top: 20px;
 }
 
-.link a {
+.link a,
+.link input {
+  border: none;
   text-decoration: none;
   border-radius: 50px;
   background-color: #997b66;
