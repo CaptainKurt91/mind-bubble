@@ -9,6 +9,16 @@
   }
 }
 
+.main-tlist-ttll {
+  display: flex;
+  align-items: center;
+
+  a {
+    margin: 0 16px;
+    text-decoration: none;
+  }
+}
+
 .tlist-ttl {
   text-align: center;
   color: #000000;
