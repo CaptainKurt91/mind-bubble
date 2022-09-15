@@ -10,7 +10,6 @@ export default class extends Controller {
   toggle(event) {
     let formData = new FormData();
     formData.append("task_checklist_item[state]", event.currentTarget.checked);
-    console.log(formData)
     const token = document.getElementsByName("csrf-token")[0].content;
 
     fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}`, {

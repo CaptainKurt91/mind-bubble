@@ -8,7 +8,6 @@ export default class extends Controller {
   }
 
   toggle(event) {
-    console.log(event.currentTarget.checked)
     let formData = new FormData();
     formData.append("category_checklist_item[state]", event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;

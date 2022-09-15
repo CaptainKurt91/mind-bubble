@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails";
 import "./controllers";
 import "bootstrap";
+import { end } from "@popperjs/core";
 
 document.addEventListener("turbo:load", () => {
   const dropupProfile = document.getElementById("dropup-profile");
@@ -19,15 +20,16 @@ document.addEventListener("turbo:load", () => {
     }
   });
 
-
-  dropupAdd.addEventListener("click", function (e) {
-    e.preventDefault();
-    if (dropupCenter.style.bottom == "-180px") {
-      dropupCenter.style.bottom = "75px";
-      dropupCenter.style.opacity = "1";
-    } else {
-      dropupCenter.style.bottom = "-180px";
-      dropupCenter.style.opacity = "0";
-    }
-  });
+  if (dropupAdd) {
+    dropupAdd.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (dropupCenter.style.bottom == "-180px") {
+        dropupCenter.style.bottom = "75px";
+        dropupCenter.style.opacity = "1";
+      } else {
+        dropupCenter.style.bottom = "-180px";
+        dropupCenter.style.opacity = "0";
+      }
+    });
+  }
 });
