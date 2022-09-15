@@ -1,7 +1,6 @@
 <h1><%= @category_note.name %></h1>
 <div class="main-note">
   <p><%= @category_note.content %></p>
-
 </div>
 <div class="edit">
     <%= link_to "✏️", edit_category_note_path(@category_note) %>
@@ -10,4 +9,4 @@
     <%= button_to category_note_path(@category_note), method: :delete do %>
         🗑
     <% end %>
-  </div>
+</div>
