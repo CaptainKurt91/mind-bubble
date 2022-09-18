@@ -29,7 +29,7 @@
         </div>
 
         <div class="edit-delete">
-          <%= link_to "✏️", edit_task_checklist_item_path(item) %>
+          <%= link_to "✏️", edit_task_checklist_task_checklist_item_path(item) %>
           <%= button_to task_checklist_item_path(item), method: :delete do %>
             🗑
           <% end %>
@@ -41,4 +41,3 @@
     <% end %>
   </ul>
   <div class="link"><%= link_to "Add item", new_task_checklist_task_checklist_item_path(@task_checklist) %></div>
-
