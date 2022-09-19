@@ -17,6 +17,7 @@ class CategoryChecklistsController < ApplicationController
 
   def show
     @checklist = CategoryChecklist.find(params[:id])
+    @items = @checklist.category_checklist_items
     @name = "category"
   end
 

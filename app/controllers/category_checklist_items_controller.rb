@@ -20,11 +20,9 @@ class CategoryChecklistItemsController < ApplicationController
   def edit
     @category_checklist = CategoryChecklist.find(params[:id])
     @category_checklist_item = CategoryChecklistItem.find(params[:category_checklist_id])
-    # raise
   end
 
   def update
-    # raise
     @category_checklist = CategoryChecklist.find(params[:category_checklist_id])
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
     @category_checklist_item.update(category_checklist_item_params)

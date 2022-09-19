@@ -10,10 +10,10 @@ export default class extends Controller {
   toggle(event) {
     console.log(event.currentTarget.checked)
     let formData = new FormData();
-    formData.append("category_checklist_item[state]", event.currentTarget.checked);
+    formData.append(`${event.target.dataset.name}_checklist_item[state]`, event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
 
-    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}`, {
+    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}/update_checklist`, {
       body: formData,
       method: "PATCH",
       credentials: "include",

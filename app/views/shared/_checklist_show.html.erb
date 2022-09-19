@@ -15,13 +15,12 @@
 
 <div data-controller="list-item">
   <div class="progress-bar">
-    <div data-task-item-target="progression" id="progression"></div>
+    <div data-list-item-target="progression" id="progression"></div>
   </div>
 
 
 <ul class="list-items">
-  <% if @name == "category" %>
-    <% @checklist.category_checklist_items.each do |item| %>
+    <% @items.each do |item| %>
         <li class="check">
 
         <div>
@@ -35,40 +34,27 @@
         </div>
 
         <div class="edit-delete">
-          <%= link_to "✏️", edit_category_checklist_item_path(item) %>
-          <%= button_to category_checklist_item_path(item), method: :delete do %>
-            🗑
+          <% if @name == "category" %>
+            <%= link_to "✏️", edit_category_checklist_category_checklist_item_path(item) %>
+            <%= button_to category_checklist_item_path(item), method: :delete do %>
+              🗑
+            <% end %>
+          <% else %>
+            <%= link_to "✏️", edit_task_checklist_task_checklist_item_path(item) %>
+            <%= button_to task_checklist_item_path(item), method: :delete do %>
+              🗑
+            <% end %>
           <% end %>
         </div>
       </li>
     <% end %>
-
-  <% else %>
-    <% @checklist.task_checklist_items.each do |item| %>
-    <li class="check">
-
-        <div>
-          <input class="check-item task" type="checkbox"
-                 data-id= <%=item.id%>
-                 data-name= <%= @name %>
-                 data-action="task-item#toggle"
-                 data-task-item-target="state"
-                 <% if item.state %> checked <% end %>>
-          <%= item.description %>
-        </div>
-
-        <div class="edit-delete">
-          <%= link_to "✏️", edit_task_checklist_item_path(item) %>
-          <%= button_to task_checklist_item_path(item), method: :delete do %>
-            🗑
-          <% end %>
-        </div>
-      </li>
-    <% end %>
-  <% end %>
   </ul>
   <div class="link-container">
     <div class="link">
+    <% if @name == "category" %>
+      <%= link_to "Add item", new_category_checklist_category_checklist_item_path(@checklist) %>
+    <% else %>
       <%= link_to "Add item", new_task_checklist_task_checklist_item_path(@checklist) %>
+    <% end %>
     </div>
   </div>
