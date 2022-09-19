@@ -1,10 +1,12 @@
 <div class="main-container">
   <div class="form-container">
-    <%= simple_form_for [@category, @task] do |f| %>
+    <%= simple_form_for [@category, @task], html: { autocomplete: "off" } do |f| %>
     <h5><%= f.input :name %></h5>
     <div class="add-task-container">
-      <div class="link">
-      <%= f.submit "Add task" %>
+      <div class="link-container">
+        <div class="link">
+        <%= f.submit "Add task" %>
+        </div>
       </div>
     </div>
     <% end %>

@@ -1,10 +1,12 @@
 <div class="main-container">
   <div class="form-container">
-    <%= simple_form_for [@task_checklist, @task_checklist_item] do |f| %>
+    <%= simple_form_for [@task_checklist, @task_checklist_item], html: { autocomplete: "off" } do |f| %>
     <div class="add-task-container">
       <%= f.input :description %>
-      <div class="link">
-        <%= f.submit "Add item" %>
+      <div class="link-container">
+        <div class="link">
+          <%= f.submit "Add item" %>
+        </div>
       </div>
     </div>
    <% end %>

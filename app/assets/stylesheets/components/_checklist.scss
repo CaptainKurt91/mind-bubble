@@ -61,9 +61,14 @@
 }
 
 .link {
-  width: 96px;
-  margin: 0 auto;
   padding-top: 20px;
+}
+
+.link-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
 }
 
 .link a,

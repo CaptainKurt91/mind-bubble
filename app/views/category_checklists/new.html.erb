@@ -1,13 +1,15 @@
 <div class="main-container">
   <div class="form-container">
-    <%= simple_form_for [@category, @category_checklist] do |f| %>
-    <h5><%= f.input :name %></h5>
+    <%= simple_form_for [@category, @category_checklist], html: { autocomplete: "off" } do |f| %>
+    <h5><%= f.input :name%></h5>
     <div class="add-task-container">
       <%= f.input :end_date, as: :date, html5: true  %>
-      <div class="add-button">
-        <%= f.submit "💾" %>
+     <div class="link-container">
+      <div class="link">
+        <%= f.submit "Save" %>
       </div>
     </div>
+
     <% end %>
   </div>
 </div>
