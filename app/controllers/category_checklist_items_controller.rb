@@ -1,5 +1,4 @@
 class CategoryChecklistItemsController < ApplicationController
-
   def show
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
   end
@@ -18,7 +17,23 @@ class CategoryChecklistItemsController < ApplicationController
     redirect_to category_checklist_path(@category_checklist)
   end
 
+  def edit
+    @category_checklist = CategoryChecklist.find(params[:id])
+    @category_checklist_item = CategoryChecklistItem.find(params[:category_checklist_id])
+    # raise
+  end
+
   def update
+    # raise
+    @category_checklist = CategoryChecklist.find(params[:category_checklist_id])
+    @category_checklist_item = CategoryChecklistItem.find(params[:id])
+    @category_checklist_item.update(category_checklist_item_params)
+    @category_checklist_item.save
+
+    redirect_to category_checklist_path(@category_checklist)
+  end
+
+  def update_checklist
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
     @category_checklist_item.update(category_checklist_item_params)
     @category_checklist_item.save

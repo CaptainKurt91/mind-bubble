@@ -13,7 +13,7 @@ export default class extends Controller {
     formData.append("category_checklist_item[state]", event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
 
-    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}`, {
+    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}/update_checklist`, {
       body: formData,
       method: "PATCH",
       credentials: "include",
