@@ -26,7 +26,8 @@ export default class extends Controller {
         event.target.checked = !event.target.checked;
       }
     });
-   this.updateProgressBar()
+
+    this.updateProgressBar()
   }
 
   updateProgressBar() {

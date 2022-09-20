@@ -1,4 +1,4 @@
- <div class="main-tlist-ttl">
+<div class="main-tlist-ttl">
   <h1 class="tlist-ttl"><%= @checklist.name %></h1>
   <% if @name == "category" %>
     <%= link_to "✏️", edit_category_checklist_path(@checklist) %>
@@ -11,18 +11,16 @@
       🗑
     <% end %>
   <% end %>
- </div>
+</div>
 
 <div data-controller="list-item">
   <div class="progress-bar">
     <div data-list-item-target="progression" id="progression"></div>
   </div>
 
-
-<ul class="list-items">
+  <ul class="list-items">
     <% @items.each do |item| %>
-        <li class="check">
-
+      <li class="check">
         <div>
           <input class="check-item" type="checkbox"
                  data-id= <%=item.id%>
@@ -49,12 +47,14 @@
       </li>
     <% end %>
   </ul>
-  <div class="link-container">
-    <div class="link">
+</div>
+
+<div class="link-container">
+  <div class="link">
     <% if @name == "category" %>
       <%= link_to "Add item", new_category_checklist_category_checklist_item_path(@checklist) %>
     <% else %>
       <%= link_to "Add item", new_task_checklist_task_checklist_item_path(@checklist) %>
     <% end %>
-    </div>
   </div>
+</div>
