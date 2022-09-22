@@ -16,7 +16,8 @@ class TaskChecklistsController < ApplicationController
   end
 
   def show
-    @task_checklist = TaskChecklist.find(params[:id])
+    @checklist = TaskChecklist.find(params[:id])
+    @items = @checklist.task_checklist_items
     @name = "task"
   end
 

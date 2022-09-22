@@ -1,0 +1,60 @@
+<div class="main-tlist-ttl">
+  <h1 class="tlist-ttl"><%= @checklist.name %></h1>
+  <% if @name == "category" %>
+    <%= link_to "✏️", edit_category_checklist_path(@checklist) %>
+    <%= button_to category_checklist_path(@checklist), method: :delete do %>
+      🗑
+    <% end %>
+  <% else %>
+    <%= link_to "✏️", edit_task_checklist_path(@checklist) %>
+    <%= button_to task_checklist_path(@checklist), method: :delete do %>
+      🗑
+    <% end %>
+  <% end %>
+</div>
+
+<div data-controller="list-item">
+  <div class="progress-bar">
+    <div data-list-item-target="progression" id="progression"></div>
+  </div>
+
+  <ul class="list-items">
+    <% @items.each do |item| %>
+      <li class="check">
+        <div>
+          <input class="check-item" type="checkbox"
+                 data-id= <%=item.id%>
+                 data-name= <%= @name %>
+                 data-action="list-item#toggle"
+                 data-list-item-target="state"
+                 <% if item.state %> checked <% end %>>
+          <%= item.description %>
+        </div>
+
+        <div class="edit-delete">
+          <% if @name == "category" %>
+            <%= link_to "✏️", edit_category_checklist_category_checklist_item_path(item) %>
+            <%= button_to category_checklist_item_path(item), method: :delete do %>
+              🗑
+            <% end %>
+          <% else %>
+            <%= link_to "✏️", edit_task_checklist_task_checklist_item_path(item) %>
+            <%= button_to task_checklist_item_path(item), method: :delete do %>
+              🗑
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="link-container">
+  <div class="link">
+    <% if @name == "category" %>
+      <%= link_to "Add item", new_category_checklist_category_checklist_item_path(@checklist) %>
+    <% else %>
+      <%= link_to "Add item", new_task_checklist_task_checklist_item_path(@checklist) %>
+    <% end %>
+  </div>
+</div>
