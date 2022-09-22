@@ -2,8 +2,10 @@
   <div class="form-container">
     <%= simple_form_for  [@task_checklist, @task_checklist_item] do |f| %>
     <h5><%= f.input :description %></h5>
-    <div class="add-button">
-       <%= f.submit "Edit" %>
+   <div class="link-container">
+      <div class="link">
+        <%= f.submit "Edit" %>
+      </div>
     </div>
     <% end %>
   </div>
