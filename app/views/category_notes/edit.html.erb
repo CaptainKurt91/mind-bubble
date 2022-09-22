@@ -1,6 +1,16 @@
-<%= simple_form_for @note, html: { autocomplete: "off" } do |f| %>
-      <%= f.input :name %>
+<div class="main-container">
+  <div class="form-container">
+    <%= simple_form_for @note, html: { autocomplete: "off" } do |f| %>
+    <h5><%= f.input :name %></h5>
+    <div class="add-task-container">
       <%= f.input :content %>
       <%= f.input :end_date, as: :date, html5: true %>
-      <%= f.submit "Edit" %>
-<% end %>
+    </div>
+    <div class="link-container">
+      <div class="link">
+        <%= f.submit "Edit" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
