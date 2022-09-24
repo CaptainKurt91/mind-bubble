@@ -1,13 +1,13 @@
 <%= turbo_frame_tag 'calendar', data: {turbo_action:"advance"} do %>
   <%= month_calendar(events: @calendar_items) do |date, calendar_items| %>
-  <%= date.day %>
+    <%= date.day %>
 
-  <% calendar_items.each do |item| %>
-    <div class="calendar-item">
-      <%= render "shared/calendar_item", item: item %>
-    </div>
+    <% calendar_items.each do |item| %>
+      <div class="calendar-item">
+        <%= render "shared/calendar_item", item: item %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 <% end %>
 
 <%#   <%= link_to "random link", root_path %>
