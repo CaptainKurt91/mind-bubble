@@ -1,10 +1,1 @@
-<div class="main-tlist-ttl">
-  <h1 class="tlist-ttl"><%= @task_note.name %></h1>
-  <%= link_to "✏️", edit_task_note_path(@task_note) %>
-  <%= button_to task_note_path(@task_note), method: :delete do %>
-        🗑
-    <% end %>
-</div>
-<div class="main-note">
-  <p><%= @task_note.content %></p>
-</div>
+<%= render "/shared/notes/show" %>

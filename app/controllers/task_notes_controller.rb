@@ -17,7 +17,7 @@ class TaskNotesController < ApplicationController
   end
 
   def show
-    @task_note = TaskNote.find(params[:id])
+    @note = TaskNote.find(params[:id])
   end
 
   def edit
