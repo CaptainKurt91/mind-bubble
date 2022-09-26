@@ -16,7 +16,7 @@ class CategoryNotesController < ApplicationController
   end
 
   def show
-    @category_note = CategoryNote.find(params[:id])
+    @note = CategoryNote.find(params[:id])
   end
 
   def edit
