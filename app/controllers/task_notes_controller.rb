@@ -10,7 +10,7 @@ class TaskNotesController < ApplicationController
     @task = Task.find(params[:task_id])
     @task_note = TaskNote.new(task_note_params)
     @task_note.task = @task
-    # @task_note.user = current_user
+    @task_note.user = current_user
     @task_note.save
 
     redirect_to task_path(@task)

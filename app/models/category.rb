@@ -1,11 +1,12 @@
 class Category < ApplicationRecord
   include PgSearch::Model
   belongs_to :home
+  belongs_to :user
 
-  has_many :tasks
-  has_many :category_notes
-  has_many :category_files
-  has_many :category_checklists
+  has_many :tasks, dependent: :delete_all
+  has_many :category_notes, dependent: :delete_all
+  has_many :category_files, dependent: :delete_all
+  has_many :category_checklists, dependent: :delete_all
 
   validates :name, presence: true
 
