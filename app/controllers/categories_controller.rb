@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :remember_page, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index]
+
   def index
     @categories = Category.all
   end
