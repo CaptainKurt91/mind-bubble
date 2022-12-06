@@ -10,14 +10,15 @@ class TasksController < ApplicationController
     @category = Category.find(params[:category_id])
     @task = Task.new(name: params[:task][:name])
     @task.category = @category
+    @task.user = current_user
     @task.save
     redirect_to category_path(@category)
   end
 
   def show
     @task = Task.find(params[:id])
-    @task_note = @task.task_notes
-    @task_checklist = @task.task_checklists
+    @task_note = @task.task_notes.where("user_id = ?", current_user)
+    @task_checklist = @task.task_checklists.where("user_id = ?", current_user)
     @output = @task_note + @task_checklist
     @sorted = @output.sort_by { |date| date.created_at }
   end

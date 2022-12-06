@@ -10,6 +10,7 @@ class CategoryNotesController < ApplicationController
     @category = Category.find(params[:category_id])
     @category_note = CategoryNote.new(category_note_params)
     @category_note.category = @category
+    @category_note.user = current_user
     @category_note.save
 
     redirect_to category_path(@category)

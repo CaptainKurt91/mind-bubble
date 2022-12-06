@@ -10,6 +10,7 @@ class TaskChecklistsController < ApplicationController
     @task = Task.find(params[:task_id])
     @task_checklist = TaskChecklist.new(task_checklist_params)
     @task_checklist.task = @task
+    @task_checklist.user = current_user
     @task_checklist.save
 
     redirect_to task_path(@task)

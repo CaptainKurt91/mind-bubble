@@ -8,6 +8,7 @@ class TaskChecklistItemsController < ApplicationController
     @task_checklist = TaskChecklist.find(params[:task_checklist_id])
     @task_checklist_item = TaskChecklistItem.new(task_checklist_item_params)
     @task_checklist_item.task_checklist = @task_checklist
+    @task_checklist_item.user = current_user
     @task_checklist_item.save
 
     redirect_to task_checklist_path(@task_checklist)

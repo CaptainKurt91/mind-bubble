@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +47,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "home_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["home_id"], name: "index_categories_on_home_id"
+    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "category_checklist_items", force: :cascade do |t|
@@ -56,7 +58,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "category_checklist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["category_checklist_id"], name: "index_category_checklist_items_on_category_checklist_id"
+    t.index ["user_id"], name: "index_category_checklist_items_on_user_id"
   end
 
   create_table "category_checklists", force: :cascade do |t|
@@ -65,7 +69,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_category_checklists_on_category_id"
+    t.index ["user_id"], name: "index_category_checklists_on_user_id"
   end
 
   create_table "category_files", force: :cascade do |t|
@@ -83,7 +89,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_category_notes_on_category_id"
+    t.index ["user_id"], name: "index_category_notes_on_user_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -108,7 +116,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "task_checklist_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["task_checklist_id"], name: "index_task_checklist_items_on_task_checklist_id"
+    t.index ["user_id"], name: "index_task_checklist_items_on_user_id"
   end
 
   create_table "task_checklists", force: :cascade do |t|
@@ -117,7 +127,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["task_id"], name: "index_task_checklists_on_task_id"
+    t.index ["user_id"], name: "index_task_checklists_on_user_id"
   end
 
   create_table "task_files", force: :cascade do |t|
@@ -135,7 +147,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
     t.index ["task_id"], name: "index_task_notes_on_task_id"
+    t.index ["user_id"], name: "index_task_notes_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -143,7 +157,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_tasks_on_category_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -162,14 +178,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_162706) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "homes"
+  add_foreign_key "categories", "users"
   add_foreign_key "category_checklist_items", "category_checklists"
+  add_foreign_key "category_checklist_items", "users"
   add_foreign_key "category_checklists", "categories"
+  add_foreign_key "category_checklists", "users"
   add_foreign_key "category_files", "categories"
   add_foreign_key "category_notes", "categories"
+  add_foreign_key "category_notes", "users"
   add_foreign_key "homes", "users"
   add_foreign_key "task_checklist_items", "task_checklists"
+  add_foreign_key "task_checklist_items", "users"
   add_foreign_key "task_checklists", "tasks"
+  add_foreign_key "task_checklists", "users"
   add_foreign_key "task_files", "tasks"
   add_foreign_key "task_notes", "tasks"
+  add_foreign_key "task_notes", "users"
   add_foreign_key "tasks", "categories"
+  add_foreign_key "tasks", "users"
 end
