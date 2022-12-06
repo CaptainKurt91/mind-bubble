@@ -3,41 +3,42 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "categories#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :categories, only: [:index, :show] do
-    resources :tasks, only: [:new, :create]
-    resources :category_notes, only: [:new, :create]
-    resources :category_files, only: [:new, :create]
-    resources :category_checklists, only: [:new, :create]
+  resources :categories, only: %i[index show] do
+    resources :tasks, only: %i[new create]
+    resources :category_notes, only: %i[new create]
+    resources :category_files, only: %i[new create]
+    resources :category_checklists, only: %i[new create]
   end
 
-  resources :category_notes, only: [:show, :edit, :update, :destroy]
-  resources :category_files, only: [:show, :edit, :update, :destroy]
-  resources :category_checklists, only: [:show, :edit, :update, :destroy]
+  resources :category_notes, only: %i[show edit update destroy]
+  resources :category_files, only: %i[show edit update destroy]
+  resources :category_checklists, only: %i[show edit update destroy]
 
-  resources :category_checklists, only: [:show] do
-    resources :category_checklist_items, only: [:new, :create, :edit, :update]
+  resources :category_checklists, only: %i[show] do
+    resources :category_checklist_items, only: %i[new create edit update]
   end
 
-  resources :tasks, only: [:show, :edit, :update, :destroy] do
-    resources :task_notes, only: [:new, :create]
-    resources :task_files, only: [:new, :create]
-    resources :task_checklists, only: [:new, :create]
+  resources :tasks, only: %i[show edit update destroy] do
+    resources :task_notes, only: %i[new create]
+    resources :task_files, only: %i[new create]
+    resources :task_checklists, only: %i[new create]
   end
 
-  resources :task_notes, only: [:show, :edit, :update, :destroy]
-  resources :task_files, only: [:show, :edit, :update, :destroy]
-  resources :task_checklists, only: [:show, :edit, :update, :destroy]
+  resources :task_notes, only: %i[show edit update destroy]
+  resources :task_files, only: %i[show edit update destroy]
+  resources :task_checklists, only: %i[show edit update destroy]
 
-  resources :task_checklists, only: [:show] do
-    resources :task_checklist_items, only: [:new, :create, :edit, :update]
+  resources :task_checklists, only: %i[show] do
+    resources :task_checklist_items, only: %i[new create edit update]
   end
 
-  resources :category_checklist_items, only: [:destroy] do
+  resources :category_checklist_items, only: %i[destroy] do
     member do
       patch :update_checklist
     end
   end
-  resources :task_checklist_items, only: [:destroy] do
+
+  resources :task_checklist_items, only: %i[destroy] do
     member do
       patch :update_checklist
     end
