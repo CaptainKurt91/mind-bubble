@@ -1,7 +1,6 @@
 class Category < ApplicationRecord
   include PgSearch::Model
   belongs_to :home
-  belongs_to :user
 
   has_many :tasks, dependent: :delete_all
   has_many :category_notes, dependent: :delete_all

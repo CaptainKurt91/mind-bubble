@@ -47,9 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
     t.bigint "home_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["home_id"], name: "index_categories_on_home_id"
-    t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
   create_table "category_checklist_items", force: :cascade do |t|
@@ -178,7 +176,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "homes"
-  add_foreign_key "categories", "users"
   add_foreign_key "category_checklist_items", "category_checklists"
   add_foreign_key "category_checklist_items", "users"
   add_foreign_key "category_checklists", "categories"

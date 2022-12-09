@@ -1,3 +1,5 @@
+p "Writing seed file!"
+
 will = User.new(email: "will@dunwoody.com", password: "123456")
 home = Home.new
 home.user = will
@@ -25,3 +27,5 @@ notes.save
 personal = Category.new(name:"personal")
 personal.home = home
 personal.save
+
+p "Seeds done"
