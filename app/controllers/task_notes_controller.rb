@@ -26,7 +26,7 @@ class TaskNotesController < ApplicationController
 
   def update
     @note = TaskNote.find(params[:id])
-    @note.update(name: params[:task_note][:name], content:  params[:task_note][:content], end_date: params[:task_note][:end_date])
+    @note.update(name: params[:task_note][:name], content: params[:task_note][:content], end_date: params[:task_note][:end_date])
     @note.save
     redirect_to task_note_path(@note)
   end

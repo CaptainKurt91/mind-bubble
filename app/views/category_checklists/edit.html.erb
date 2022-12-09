@@ -3,6 +3,7 @@
     <%= simple_form_for @checklist, html: { autocomplete: "off" } do |f| %>
     <h5><%= f.input :name %></h5>
     <div class="add-task-container">
+      <% @checklist.errors.full_messages_for(:name) %>
       <%= f.input :end_date, as: :date, html5: true %>
     </div>
     <div class="link-container">

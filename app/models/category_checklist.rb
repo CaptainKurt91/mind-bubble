@@ -5,5 +5,7 @@ class CategoryChecklist < ApplicationRecord
   belongs_to :user
 
   has_many :category_checklist_items, dependent: :delete_all
+
+  validates :name, presence: true
   multisearchable against: :name
 end
