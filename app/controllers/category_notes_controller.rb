@@ -11,9 +11,11 @@ class CategoryNotesController < ApplicationController
     @category_note = CategoryNote.new(category_note_params)
     @category_note.category = @category
     @category_note.user = current_user
-    @category_note.save
-
-    redirect_to category_path(@category)
+    if @category_note.save
+      redirect_to category_path(@category)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -26,9 +28,11 @@ class CategoryNotesController < ApplicationController
 
   def update
     @note = CategoryNote.find(params[:id])
-    @note.update(name: params[:category_note][:name], content:  params[:category_note][:content], end_date: params[:category_note][:end_date])
-    @note.save
-    redirect_to category_note_path(@note)
+    if @note.update(category_note_params)
+      redirect_to category_note_path(@note)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -37,7 +41,6 @@ class CategoryNotesController < ApplicationController
     @note.destroy
     redirect_to category_path(@category)
   end
-
 
   private
 

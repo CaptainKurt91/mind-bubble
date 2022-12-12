@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_105659) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "category_checklist_items", force: :cascade do |t|
-    t.string "description"
+    t.string "title"
     t.boolean "state", default: false, null: false
     t.bigint "category_checklist_id", null: false
     t.datetime "created_at", null: false
@@ -62,7 +62,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "category_checklists", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.date "end_date"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "category_notes", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.text "content"
     t.date "end_date"
     t.bigint "category_id", null: false
@@ -109,7 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "task_checklist_items", force: :cascade do |t|
-    t.string "description"
+    t.string "title"
     t.boolean "state", default: false, null: false
     t.bigint "task_checklist_id", null: false
     t.datetime "created_at", null: false
@@ -120,7 +120,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "task_checklists", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.date "end_date"
     t.bigint "task_id", null: false
     t.datetime "created_at", null: false
@@ -139,7 +139,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "task_notes", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.text "content"
     t.date "end_date"
     t.bigint "task_id", null: false
@@ -151,7 +151,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_06_174349) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id", null: false

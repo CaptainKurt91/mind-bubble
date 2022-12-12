@@ -1,11 +1,10 @@
 <div class="main-container">
   <div class="form-container">
-    <% model = child.new_record? ? [parent, child] : [child] %>
+    <% model = checklist.new_record? ? [category, checklist] : [checklist] %>
     <%= simple_form_for model, html: { autocomplete: "off" } do |f| %>
     <h5><%= f.input :name %></h5>
-    <% child.errors.full_messages_for(:name) %>
     <div class="add-task-container">
-      <%= f.input :content, as: :text %>
+      <% @category_checklist.errors.full_messages_for(:name) %>
       <%= f.input :end_date, as: :date, html5: true  %>
     </div>
     <div class="link-container">

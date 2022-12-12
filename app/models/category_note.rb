@@ -3,6 +3,7 @@ class CategoryNote < ApplicationRecord
   include PgSearch::Model
   belongs_to :category
   belongs_to :user
-  
-  multisearchable against: :name
+
+  validates :title, presence: true
+  multisearchable against: :title
 end

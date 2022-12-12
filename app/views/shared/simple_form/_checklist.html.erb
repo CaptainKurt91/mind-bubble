@@ -1,11 +1,10 @@
 <div class="main-container">
   <div class="form-container">
-    <% model = child.new_record? ? [parent, child] : [child] %>
+    <%# model = child.new_record? ? [parent, child] : [child] %>
     <%= simple_form_for model, html: { autocomplete: "off" } do |f| %>
-    <h5><%= f.input :name %></h5>
-    <% child.errors.full_messages_for(:name) %>
+    <h5><%= f.input :title %></h5>
     <div class="add-task-container">
-      <%= f.input :content, as: :text %>
+      <% model[1].errors.full_messages_for(:title) %>
       <%= f.input :end_date, as: :date, html5: true  %>
     </div>
     <div class="link-container">

@@ -6,6 +6,6 @@ class CategoryChecklist < ApplicationRecord
 
   has_many :category_checklist_items, dependent: :delete_all
 
-  validates :name, presence: true
+  validates :title, presence: true
   multisearchable against: :name
 end

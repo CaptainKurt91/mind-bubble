@@ -5,5 +5,5 @@ class TaskChecklist < ApplicationRecord
   belongs_to :user
 
   has_many :task_checklist_items, dependent: :delete_all
-  multisearchable against: :name
+  multisearchable against: :title
 end
