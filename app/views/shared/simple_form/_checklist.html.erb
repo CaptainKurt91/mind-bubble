@@ -1,6 +1,5 @@
 <div class="main-container">
   <div class="form-container">
-    <%# model = child.new_record? ? [parent, child] : [child] %>
     <%= simple_form_for model, html: { autocomplete: "off" } do |f| %>
     <h5><%= f.input :title %></h5>
     <div class="add-task-container">

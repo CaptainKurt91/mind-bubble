@@ -55,6 +55,6 @@ class CategoryChecklistItemsController < ApplicationController
   private
 
   def category_checklist_item_params
-    params.require(:category_checklist_item).permit(:description, :state)
+    params.require(:category_checklist_item).permit(:title, :state)
   end
 end

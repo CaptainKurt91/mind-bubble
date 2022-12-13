@@ -11,9 +11,11 @@ class TaskNotesController < ApplicationController
     @task_note = TaskNote.new(task_note_params)
     @task_note.task = @task
     @task_note.user = current_user
-    @task_note.save
-
-    redirect_to task_path(@task)
+    if @task_note.save
+      redirect_to task_path(@task)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -26,9 +28,11 @@ class TaskNotesController < ApplicationController
 
   def update
     @note = TaskNote.find(params[:id])
-    @note.update(name: params[:task_note][:name], content: params[:task_note][:content], end_date: params[:task_note][:end_date])
-    @note.save
-    redirect_to task_note_path(@note)
+    if @note.update(task_note_params)
+      redirect_to task_note_path(@note)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -41,6 +45,6 @@ class TaskNotesController < ApplicationController
   private
 
   def task_note_params
-    params.require(:task_note).permit(:name, :content, :end_date)
+    params.require(:task_note).permit(:title, :content, :end_date)
   end
 end

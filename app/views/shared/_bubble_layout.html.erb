@@ -10,26 +10,26 @@
 
     <%= link_to second[0], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-blue"  style="<%= "display: none;" if second[0].nil? %>">
-        <%= second[0].name.capitalize  unless second[0].nil?%>
+        <%= second[0].title.capitalize unless second[0].nil?%>
       </div>
     <% end %>
 
     <%= link_to second[1], style:"text-decoration: none;" do %>
       <div class="bbl bbl-pink"  style="<%= "display: none;" if second[1].nil? %>">
-        <%= second[1].name.capitalize  unless second[1].nil?%>
+        <%= second[1].title.capitalize unless second[1].nil?%>
       </div>
     <% end %>
 
     <%= link_to second[2], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-yellow" style="<%= "display: none;" if second[2].nil? %>">
-        <%= second[2].name.capitalize  unless second[2].nil? %>
+        <%= second[2].title.capitalize unless second[2].nil? %>
       </div>
     <% end %>
   </div>
 
   <div class="main-bbl-container">
     <div class="main-bbl">
-      <h1 class="main-title"><%= main.nil? ? "Mind Bubble" : main.name.capitalize %></h1>
+      <h1 class="main-title"><%= main.nil? ? "Mind Bubble" : main.title.capitalize %></h1>
     </div>
   </div>
 
@@ -42,19 +42,19 @@
 
     <%= link_to second[5], style:"text-decoration: none;" do %>
       <div class="bbl bbl-red" style="<%= "display: none;" if second[5].nil? %>">
-        <%= second[5].name.capitalize unless second[5].nil? %>
+        <%= second[5].title.capitalize unless second[5].nil? %>
       </div>
     <% end %>
 
     <%= link_to second[4], class:"bottom", style:"text-decoration: none;" do %>
       <div class="bbl bbl-aqua" style="<%= "display: none;" if second[4].nil? %>">
-        <%= second[4].name.capitalize unless second[4].nil? %>
+        <%= second[4].title.capitalize unless second[4].nil? %>
       </div>
     <% end %>
 
     <%= link_to second[3], style:"text-decoration: none;" do %>
       <div class="bbl bbl-purple" style="<%= "display: none;" if second[3].nil? %>">
-        <%= second[3].name.capitalize unless second[3].nil? %>
+        <%= second[3].title.capitalize unless second[3].nil? %>
       </div>
     <% end %>
   </div>

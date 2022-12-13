@@ -1,9 +1,10 @@
 <div class="main-container">
   <div class="form-container">
    <%= simple_form_for @task, html: { autocomplete: "off" } do |f| %>
-   <h5><%= f.input :name %></h5>
+   <h5><%= f.input :title %></h5>
+   <% @task.errors.full_messages_for(:title) %>
    <div class="link">
-     <%= f.submit "Edit"%>
+     <%= f.submit "Save"%>
    </div>
    <% end %>
   </div>

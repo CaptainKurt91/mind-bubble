@@ -1,10 +1,10 @@
 <div class="main-container">
   <div class="form-container">
-    <%= simple_form_for  [checklist, checklist_item] do |f| %>
-    <h5><%= f.input :description %></h5>
+    <%= simple_form_for model do |f| %>
+    <h5><%= f.input :title %></h5>
     <div class="link-container">
       <div class="link">
-        <%= f.submit "Edit" %>
+        <%= f.submit "Save" %>
       </div>
     </div>
     <% end %>

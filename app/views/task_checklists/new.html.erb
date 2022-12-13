@@ -1,14 +1,1 @@
-<div class="main-container">
-  <div class="form-container">
-    <%= simple_form_for [@task, @task_checklist], html: { autocomplete: "off" } do |f| %>
-    <h5><%= f.input :name %></h5>
-    <div class="add-task-container">
-      <%= f.input :end_date, as: :date, html5: true %>
-    <div class="link-container">
-      <div class="link">
-        <%= f.submit "Save" %>
-      </div>
-    </div>
-    <% end %>
-  </div>
-</div>
+<%= render "/shared/simple_form/checklist", model: [@task, @task_checklist] %>

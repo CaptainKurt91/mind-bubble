@@ -8,11 +8,14 @@ class TasksController < ApplicationController
 
   def create
     @category = Category.find(params[:category_id])
-    @task = Task.new(name: params[:task][:name])
+    @task = Task.new(task_params)
     @task.category = @category
     @task.user = current_user
-    @task.save
-    redirect_to category_path(@category)
+    if @task.save
+      redirect_to category_path(@category)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -29,9 +32,11 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(name: params[:task][:name])
-    @task.save
-    redirect_to task_path(@task)
+    if @task.update(task_params)
+      redirect_to task_path(@task)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -39,5 +44,9 @@ class TasksController < ApplicationController
     @task.destroy
     @category = Category.find(@task[:category_id])
     redirect_to category_path(@category)
+  end
+
+  def task_params
+    params.require(:task).permit(:title)
   end
 end
