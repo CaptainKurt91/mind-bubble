@@ -7,7 +7,7 @@ class Category < ApplicationRecord
   has_many :category_files, dependent: :delete_all
   has_many :category_checklists, dependent: :delete_all
 
-  validates :name, presence: true
+  validates :title, presence: true
 
-  multisearchable against: :name
+  multisearchable against: :title
 end

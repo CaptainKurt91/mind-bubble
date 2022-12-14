@@ -7,7 +7,7 @@ class Task < ApplicationRecord
   has_many :task_files, dependent: :delete_all
   has_many :task_checklists, dependent: :delete_all
 
-  validates :name, presence: true
+  validates :title, presence: true
 
-  multisearchable against: :name
+  multisearchable against: :title
 end

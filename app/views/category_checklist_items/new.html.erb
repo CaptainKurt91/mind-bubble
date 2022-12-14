@@ -1,13 +1,1 @@
-<div class="main-container">
-  <div class="form-container">
-     <%= simple_form_for [@category_checklist, @category_checklist_item], html: { autocomplete: "off" } do |f| %>
-     <div class="add-task-container">
-      <%= f.input :description %>
-      <div class="link-container">
-        <div class="link">
-          <%= f.submit "Add item" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
+<%= render "/shared/simple_form/checklist_item", model: [@category_checklist, @category_checklist_item] %>

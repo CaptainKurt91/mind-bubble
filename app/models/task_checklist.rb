@@ -3,7 +3,9 @@ class TaskChecklist < ApplicationRecord
   include PgSearch::Model
   belongs_to :task
   belongs_to :user
-
   has_many :task_checklist_items, dependent: :delete_all
-  multisearchable against: :name
+
+  validates :title, presence: true
+
+  multisearchable against: :title
 end

@@ -1,5 +1,5 @@
 <div class="main-tlist-ttl">
-  <h1 class="tlist-ttl"><%= @note.name %></h1>
+  <h1 class="tlist-ttl"><%= @note.title %></h1>
   <% if params[:controller] == "task_notes" %>
     <%= link_to "✏️", edit_task_note_path(@note) %>
     <%= button_to task_note_path(@note), method: :delete do %>

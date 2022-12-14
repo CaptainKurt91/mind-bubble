@@ -11,9 +11,11 @@ class TaskChecklistsController < ApplicationController
     @task_checklist = TaskChecklist.new(task_checklist_params)
     @task_checklist.task = @task
     @task_checklist.user = current_user
-    @task_checklist.save
-
-    redirect_to task_path(@task)
+    if @task_checklist.save
+      redirect_to task_path(@task)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -28,9 +30,11 @@ class TaskChecklistsController < ApplicationController
 
   def update
     @checklist = TaskChecklist.find(params[:id])
-    @checklist.update(name: params[:task_checklist][:name], end_date: params[:task_checklist][:end_date])
-    @checklist.save
-    redirect_to task_checklist_path(@checklist)
+    if @checklist.update(task_checklist_params)
+      redirect_to task_checklist_path(@checklist)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -43,6 +47,6 @@ class TaskChecklistsController < ApplicationController
   private
 
   def task_checklist_params
-    params.require(:task_checklist).permit(:name, :end_date)
+    params.require(:task_checklist).permit(:title, :end_date)
   end
 end

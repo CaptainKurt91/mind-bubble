@@ -1,0 +1,17 @@
+<div class="main-container">
+  <div class="form-container">
+    <%= simple_form_for model, html: { autocomplete: "off" } do |f| %>
+    <h5><%= f.input :title %></h5>
+    <% model[1].errors.full_messages_for(:title) %>
+    <div class="add-task-container">
+      <%= f.input :content, as: :text %>
+      <%= f.input :end_date, as: :date, html5: true  %>
+    </div>
+    <div class="link-container">
+      <div class="link">
+        <%= f.submit "Save" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

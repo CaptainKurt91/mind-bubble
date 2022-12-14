@@ -11,9 +11,11 @@ class CategoryChecklistsController < ApplicationController
     @category_checklist = CategoryChecklist.new(category_checklist_params)
     @category_checklist.category = @category
     @category_checklist.user = current_user
-    @category_checklist.save
-
-    redirect_to category_path(@category)
+    if @category_checklist.save
+      redirect_to category_path(@category)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -28,9 +30,11 @@ class CategoryChecklistsController < ApplicationController
 
   def update
     @checklist = CategoryChecklist.find(params[:id])
-    @checklist.update(name: params[:category_checklist][:name], end_date: params[:category_checklist][:end_date])
-    @checklist.save
-    redirect_to category_checklist_path(@checklist)
+    if @checklist.update(category_checklist_params)
+      redirect_to category_checklist_path(@checklist)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -43,6 +47,6 @@ class CategoryChecklistsController < ApplicationController
   private
 
   def category_checklist_params
-    params.require(:category_checklist).permit(:name, :end_date)
+    params.require(:category_checklist).permit(:title, :end_date)
   end
 end

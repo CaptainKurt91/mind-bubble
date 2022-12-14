@@ -4,5 +4,7 @@ class TaskNote < ApplicationRecord
   belongs_to :task
   belongs_to :user
 
-  multisearchable against: :name
+  validates :title, presence: true
+
+  multisearchable against: :title
 end
