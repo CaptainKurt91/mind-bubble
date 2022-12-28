@@ -6,4 +6,8 @@ class CategoryNote < ApplicationRecord
 
   validates :title, presence: true
   multisearchable against: :title
+
+  def self.today
+    Cage
+  end
 end

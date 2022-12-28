@@ -10,4 +10,13 @@ class Category < ApplicationRecord
   validates :title, presence: true
 
   multisearchable against: :title
+
+  def self.today_show(user)
+    today = "#{Date.today.year}-#{Date.today.month}-#{Date.today.day}"
+    category_note = CategoryNote.where("user_id = ? AND end_date = ?", user, today)
+    category_checklist = CategoryChecklist.where("user_id = ? AND end_date = ?", user, today)
+    task_note = TaskNote.where("user_id = ? AND end_date = ?", user, today)
+    task_checklist = TaskChecklist.where("user_id = ? AND end_date = ?", user, today)
+    category_note + category_checklist + task_note + task_checklist
+  end
 end
