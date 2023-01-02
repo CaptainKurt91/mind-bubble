@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :category_notes, only: %i[show edit update destroy]
   resources :category_files, only: %i[show edit update destroy]
   resources :category_checklists, only: %i[show edit update destroy]
+  resources :category_checklist_items, only: %i[destroy]
+  resources :task_checklist_items, only: %i[destroy]
 
   resources :category_checklists, only: %i[show] do
     resources :category_checklist_items, only: %i[new create edit update]
@@ -30,17 +32,5 @@ Rails.application.routes.draw do
 
   resources :task_checklists, only: %i[show] do
     resources :task_checklist_items, only: %i[new create edit update]
-  end
-
-  resources :category_checklist_items, only: %i[destroy] do
-    member do
-      patch :update_checklist
-    end
-  end
-
-  resources :task_checklist_items, only: %i[destroy] do
-    member do
-      patch :update_checklist
-    end
   end
 end

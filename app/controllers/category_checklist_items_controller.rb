@@ -29,18 +29,9 @@ class CategoryChecklistItemsController < ApplicationController
     @category_checklist = CategoryChecklist.find(params[:category_checklist_id])
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
     if @category_checklist_item.update(category_checklist_item_params)
-      redirect_to category_checklist_path(@category_checklist)
+      redirect_to category_checklist_path(@category_checklist) if params[:category_checklist_item][:title]
     else
       render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def update_checklist
-    @category_checklist_item = CategoryChecklistItem.find(params[:id])
-    @category_checklist_item.update(category_checklist_item_params)
-
-    respond_to do |format|
-      format.js
     end
   end
 

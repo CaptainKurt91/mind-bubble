@@ -13,7 +13,9 @@
   <% end %>
 </div>
 
-<div data-controller="list-item">
+<div data-controller="list-item"
+     data-list-item-checklist-value= <%= @checklist.id %>
+     >
   <div class="progress-bar">
     <div data-list-item-target="progression" id="progression"></div>
   </div>

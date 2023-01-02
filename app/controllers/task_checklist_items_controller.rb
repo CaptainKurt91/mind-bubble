@@ -25,18 +25,9 @@ class TaskChecklistItemsController < ApplicationController
     @task_checklist = TaskChecklist.find(params[:task_checklist_id])
     @task_checklist_item = TaskChecklistItem.find(params[:id])
     if @task_checklist_item.update(task_checklist_item_params)
-      redirect_to task_checklist_path(@task_checklist)
+      redirect_to task_checklist_path(@task_checklist) if params[:task_checklist_item][:title]
     else
       render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def update_checklist
-    @task_checklist_item = TaskChecklistItem.find(params[:id])
-    @task_checklist_item.update(task_checklist_item_params)
-
-    respond_to do |format|
-      format.js
     end
   end
 
