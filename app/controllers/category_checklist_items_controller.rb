@@ -1,4 +1,6 @@
 class CategoryChecklistItemsController < ApplicationController
+  include ChecklistItems
+
   def show
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
   end
@@ -28,21 +30,18 @@ class CategoryChecklistItemsController < ApplicationController
   def update
     @category_checklist = CategoryChecklist.find(params[:category_checklist_id])
     @category_checklist_item = CategoryChecklistItem.find(params[:id])
-    if @category_checklist_item.update(category_checklist_item_params)
-      redirect_to category_checklist_path(@category_checklist)
-    else
-      render :edit, status: :unprocessable_entity
-    end
-  end
-
-  def update_checklist
-    @category_checklist_item = CategoryChecklistItem.find(params[:id])
     @category_checklist_item.update(category_checklist_item_params)
-
-    respond_to do |format|
-      format.js
-    end
+    update_checklist
   end
+
+  # def update_checklist
+  #   @category_checklist_item = CategoryChecklistItem.find(params[:id])
+  #   @category_checklist_item.update(category_checklist_item_params)
+
+  #   respond_to do |format|
+  #     format.js
+  #   end
+  # end
 
   def destroy
     @category_checklist_item = CategoryChecklistItem.find(params[:id])

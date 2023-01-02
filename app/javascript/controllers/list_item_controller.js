@@ -13,7 +13,7 @@ export default class extends Controller {
     formData.append(`${event.target.dataset.name}_checklist_item[state]`, event.currentTarget.checked);
     const token = document.getElementsByName("csrf-token")[0].content;
 
-    fetch(`/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}/update_checklist`, {
+    fetch(`/${event.target.dataset.name}_checklists/4/${event.target.dataset.name}_checklist_items/${event.target.dataset.id}/update`, {
       body: formData,
       method: "PATCH",
       credentials: "include",
@@ -29,7 +29,7 @@ export default class extends Controller {
 
     this.updateProgressBar()
   }
-
+  "/category_checklist_items/10/update"
   updateProgressBar() {
     const checkedItems = [];
 

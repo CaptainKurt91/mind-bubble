@@ -31,14 +31,14 @@ class TaskChecklistItemsController < ApplicationController
     end
   end
 
-  def update_checklist
-    @task_checklist_item = TaskChecklistItem.find(params[:id])
-    @task_checklist_item.update(task_checklist_item_params)
+  # def update_checklist
+  #   @task_checklist_item = TaskChecklistItem.find(params[:id])
+  #   @task_checklist_item.update(task_checklist_item_params)
 
-    respond_to do |format|
-      format.js
-    end
-  end
+  #   respond_to do |format|
+  #     format.js
+  #   end
+  # end
 
   def destroy
     @task_checklist_item = TaskChecklistItem.find(params[:id])
