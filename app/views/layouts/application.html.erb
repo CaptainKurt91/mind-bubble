@@ -30,7 +30,8 @@
   </head>
 
   <body>
-    <div>
+  <%# Puts the full page inside a div that we can use as the screen size %>
+    <div class="mobile-size">
         <%= render "shared/searchbar" %>
         <%= yield %>
         <%= render "shared/navbar" %>
