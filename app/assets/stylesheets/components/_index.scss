@@ -9,7 +9,22 @@
 @import "add_button";
 @import "notes";
 
-
+// Changed the body css to center our mobile screen in the center of the page
 body {
+  background-color: gray;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Added this as a guide for sizing our screen meaning that all the css that we do
+// from now on will be set to this screen size, the hopefully with media queries we
+// can then size it for every screen without having to change all the css
+.mobile-size {
   background-color: #E8E7E2;
+  border: 1px black solid;
+  border-radius: 10px;
+  width: 400px;
+  height: 665px;
 }

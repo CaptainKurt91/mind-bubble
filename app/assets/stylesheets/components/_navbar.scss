@@ -2,12 +2,12 @@
   display: flex;
   justify-content: space-around;
   background-color: rgba(239, 238, 230, 1);
-  position: fixed;
   padding: 22px 0;
-  bottom: 0;
+  bottom: -20px;
   width: 100%;
   border-top: 1px solid rgba(153, 123, 102, 1) !important;
   z-index: 1;
+  border-radius: 0 0 10px 10px;
 }
 
 .navcontainer {
